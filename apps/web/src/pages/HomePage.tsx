@@ -446,19 +446,24 @@ export function HomePage() {
 
         {/* BOTTOM CTA BANNER */}
         <section className="mt-14">
-          <div className="apple-card bg-[var(--ac)] text-white text-center py-12 px-6">
-            <h2 className="text-3xl font-bold tracking-[-0.8px] mb-2 text-white">
+          <div className="rounded-3xl bg-[var(--ac)] text-white text-center py-12 px-6 shadow-xl relative overflow-hidden">
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3 text-white">
               Cek gajimu sekarang
             </h2>
-            <p className="opacity-90 max-w-md mx-auto mb-6">
+            <p className="text-white/90 text-sm sm:text-base max-w-md mx-auto mb-7 leading-relaxed">
               Hanya butuh 1 menit untuk mengetahui kesehatan finansialmu di kota tujuan.
             </p>
-            <Link to="/calculator" className="apple-btn bg-white text-[var(--ac)] hover:opacity-95">
-              Mulai Simulasi
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </Link>
+            <div className="flex justify-center">
+              <Link
+                to="/calculator"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl bg-white text-[var(--ac)] hover:bg-neutral-100 font-bold text-base shadow-lg transition-transform hover:scale-105 active:scale-95 no-underline"
+              >
+                Mulai Simulasi
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </section>
       </div>

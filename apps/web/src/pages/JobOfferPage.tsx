@@ -93,13 +93,13 @@ export function JobOfferPage() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto mb-10">
-        <span className="inline-block text-xs font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full mb-3">
+        <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[var(--ok)] bg-[var(--f)] px-3 py-1 rounded-full mb-3">
           Simulator Tawaran Kerja (Job Offer)
         </span>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight mb-3">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--tx)] tracking-tight mb-3">
           Apakah Tawaran Pindah Kota Layak Diambil?
         </h1>
-        <p className="text-sm sm:text-base text-neutral-600">
+        <p className="text-sm sm:text-base text-[var(--mu)]">
           Hindari <em>Phantom Raise</em> — kenaikan nominal gaji yang ternyata habis termakan biaya hidup dan sewa tempat tinggal di kota tujuan.
         </p>
       </div>
@@ -107,25 +107,25 @@ export function JobOfferPage() {
       {/* Main Side-by-Side Comparison */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {/* Box 1: Kondisi Saat Ini */}
-        <div className="apple-card p-6 bg-white border border-neutral-200/80 rounded-2xl shadow-sm">
-          <div className="flex items-center justify-between pb-3 border-b border-neutral-100 mb-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-neutral-500">
+        <div className="apple-card">
+          <div className="flex items-center justify-between pb-3 border-b border-[var(--bd)] mb-4">
+            <span className="text-xs font-bold uppercase tracking-wider text-[var(--mu)]">
               Kondisi Saat Ini
             </span>
-            <span className="text-xs font-semibold px-2 py-0.5 rounded bg-neutral-100 text-neutral-700">
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[var(--f)] text-[var(--tx)]">
               Kota Asal
             </span>
           </div>
 
           <div className="space-y-4">
             <div>
-              <label className="block text-xs font-medium text-neutral-600 mb-1">
+              <label className="block text-xs font-medium text-[var(--mu)] mb-1">
                 Kota Domisili Saat Ini
               </label>
               <select
                 value={currentCityId}
                 onChange={(e) => handleCurrentCityChange(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-neutral-300 text-sm font-semibold text-neutral-800 bg-white"
+                className="w-full px-3 py-2.5 rounded-xl border border-[var(--bd)] bg-[var(--f)] text-sm font-semibold text-[var(--tx)] focus:outline-none focus:ring-2 focus:ring-[var(--ac)]"
               >
                 {citiesData.map((c) => (
                   <option key={c.id} value={c.id}>
@@ -136,11 +136,11 @@ export function JobOfferPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-neutral-600 mb-1">
+              <label className="block text-xs font-medium text-[var(--mu)] mb-1">
                 Gaji Bersih Diterima (THP) / Bulan
               </label>
               <div className="relative">
-                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-sm font-semibold text-neutral-400">
+                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-sm font-semibold text-[var(--mu)]">
                   Rp
                 </span>
                 <input
@@ -148,53 +148,53 @@ export function JobOfferPage() {
                   step="500000"
                   value={currentNetSalary}
                   onChange={(e) => setCurrentNetSalary(Number(e.target.value) || 0)}
-                  className="w-full pl-10 pr-4 py-2 rounded-xl border border-neutral-300 font-bold text-neutral-900"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[var(--bd)] bg-[var(--f)] font-bold text-[var(--tx)] focus:outline-none focus:ring-2 focus:ring-[var(--ac)]"
                 />
               </div>
             </div>
 
             {/* Expense breakdown toggle/summary */}
-            <div className="pt-3 border-t border-neutral-100 space-y-2 text-xs">
-              <div className="flex justify-between text-neutral-600">
+            <div className="pt-3 border-t border-[var(--bd)] space-y-2 text-xs">
+              <div className="flex justify-between text-[var(--mu)]">
                 <span>Pengeluaran Total:</span>
-                <span className="font-semibold text-neutral-900">
+                <span className="font-semibold text-[var(--tx)]">
                   {formatRupiah(calculateTotalExpenses(currentExpenses))}
                 </span>
               </div>
-              <div className="flex justify-between text-neutral-600">
+              <div className="flex justify-between text-[var(--mu)]">
                 <span>Sisa Tabungan Bersih:</span>
-                <span className="font-bold text-emerald-600">
+                <span className="font-bold text-[var(--ok)]">
                   {formatRupiah(result.currentDisposableIncome)}
                 </span>
               </div>
-              <div className="flex justify-between text-neutral-500">
+              <div className="flex justify-between text-[var(--mu)]">
                 <span>Tingkat Tabungan:</span>
-                <span className="font-semibold">{result.currentSavingsRate}%</span>
+                <span className="font-semibold text-[var(--tx)]">{result.currentSavingsRate}%</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Box 2: Tawaran Baru */}
-        <div className="apple-card p-6 bg-blue-50/40 border border-blue-200/80 rounded-2xl shadow-sm">
-          <div className="flex items-center justify-between pb-3 border-b border-blue-100 mb-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+        <div className="apple-card border border-[var(--ac)]/40">
+          <div className="flex items-center justify-between pb-3 border-b border-[var(--bd)] mb-4">
+            <span className="text-xs font-bold uppercase tracking-wider text-[var(--ac)]">
               Tawaran Baru
             </span>
-            <span className="text-xs font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-800">
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[var(--ac)]/15 text-[var(--ac)]">
               Kota Tujuan
             </span>
           </div>
 
           <div className="space-y-4">
             <div>
-              <label className="block text-xs font-medium text-neutral-600 mb-1">
+              <label className="block text-xs font-medium text-[var(--mu)] mb-1">
                 Kota Penempatan Baru
               </label>
               <select
                 value={offerCityId}
                 onChange={(e) => handleOfferCityChange(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-neutral-300 text-sm font-semibold text-neutral-800 bg-white"
+                className="w-full px-3 py-2.5 rounded-xl border border-[var(--bd)] bg-[var(--f)] text-sm font-semibold text-[var(--tx)] focus:outline-none focus:ring-2 focus:ring-[var(--ac)]"
               >
                 {citiesData.map((c) => (
                   <option key={c.id} value={c.id}>
@@ -205,11 +205,11 @@ export function JobOfferPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-neutral-600 mb-1">
+              <label className="block text-xs font-medium text-[var(--mu)] mb-1">
                 Gaji Bersih Ditawarkan (THP) / Bulan
               </label>
               <div className="relative">
-                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-sm font-semibold text-neutral-400">
+                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-sm font-semibold text-[var(--mu)]">
                   Rp
                 </span>
                 <input
@@ -217,28 +217,28 @@ export function JobOfferPage() {
                   step="500000"
                   value={offerNetSalary}
                   onChange={(e) => setOfferNetSalary(Number(e.target.value) || 0)}
-                  className="w-full pl-10 pr-4 py-2 rounded-xl border border-blue-400 focus:ring-2 focus:ring-blue-500 font-bold text-neutral-900"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[var(--ac)] bg-[var(--f)] focus:ring-2 focus:ring-[var(--ac)] font-bold text-[var(--tx)] focus:outline-none"
                 />
               </div>
             </div>
 
             {/* Expense breakdown summary */}
-            <div className="pt-3 border-t border-blue-100 space-y-2 text-xs">
-              <div className="flex justify-between text-neutral-600">
+            <div className="pt-3 border-t border-[var(--bd)] space-y-2 text-xs">
+              <div className="flex justify-between text-[var(--mu)]">
                 <span>Pengeluaran Total:</span>
-                <span className="font-semibold text-neutral-900">
+                <span className="font-semibold text-[var(--tx)]">
                   {formatRupiah(calculateTotalExpenses(offerExpenses))}
                 </span>
               </div>
-              <div className="flex justify-between text-neutral-600">
+              <div className="flex justify-between text-[var(--mu)]">
                 <span>Sisa Tabungan Bersih:</span>
-                <span className="font-bold text-blue-600">
+                <span className="font-bold text-[var(--ac)]">
                   {formatRupiah(result.offerDisposableIncome)}
                 </span>
               </div>
-              <div className="flex justify-between text-neutral-500">
+              <div className="flex justify-between text-[var(--mu)]">
                 <span>Tingkat Tabungan:</span>
-                <span className="font-semibold">{result.offerSavingsRate}%</span>
+                <span className="font-semibold text-[var(--tx)]">{result.offerSavingsRate}%</span>
               </div>
             </div>
           </div>
@@ -247,10 +247,10 @@ export function JobOfferPage() {
 
       {/* Decision Verdict Banner */}
       <div
-        className={`apple-card p-6 rounded-2xl border mb-8 ${
+        className={`apple-card mb-8 border ${
           result.isWorthIt
-            ? 'bg-emerald-50/80 border-emerald-300'
-            : 'bg-amber-50/80 border-amber-300'
+            ? 'border-[var(--ok)]/50 bg-[var(--ok)]/10'
+            : 'border-[var(--w)]/50 bg-[var(--w)]/10'
         }`}
       >
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -258,23 +258,23 @@ export function JobOfferPage() {
             <div className="flex items-center gap-2 mb-1">
               <span
                 className={`w-3 h-3 rounded-full ${
-                  result.isWorthIt ? 'bg-emerald-500' : 'bg-amber-500'
+                  result.isWorthIt ? 'bg-[var(--ok)]' : 'bg-[var(--w)]'
                 }`}
               ></span>
-              <h2 className="text-xl font-extrabold text-neutral-900">
+              <h2 className="text-xl font-extrabold text-[var(--tx)]">
                 {result.recommendationHeadline}
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed max-w-2xl">
+            <p className="text-xs sm:text-sm text-[var(--tx)] opacity-90 leading-relaxed max-w-2xl">
               {result.recommendationDetail}
             </p>
           </div>
 
           <div className="sm:text-right shrink-0">
-            <div className="text-xs text-neutral-500">Selisih Tabungan Bulanan:</div>
+            <div className="text-xs text-[var(--mu)]">Selisih Tabungan Bulanan:</div>
             <div
               className={`text-2xl font-black ${
-                result.disposableIncomeDifference >= 0 ? 'text-emerald-600' : 'text-rose-600'
+                result.disposableIncomeDifference >= 0 ? 'text-[var(--ok)]' : 'text-[var(--r)]'
               }`}
             >
               {result.disposableIncomeDifference >= 0 ? '+' : ''}
@@ -285,62 +285,62 @@ export function JobOfferPage() {
       </div>
 
       {/* Detailed Comparison Metrics */}
-      <div className="apple-card p-6 bg-white border border-neutral-200/80 rounded-2xl shadow-sm mb-8">
-        <h3 className="text-sm font-bold text-neutral-900 uppercase tracking-wider mb-4">
+      <div className="apple-card mb-8">
+        <h3 className="text-sm font-bold text-[var(--tx)] uppercase tracking-wider mb-4">
           Ringkasan Angka Kunci
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-          <div className="p-4 bg-neutral-50 rounded-xl">
-            <div className="text-xs text-neutral-500 mb-1">Kenaikan Gaji Nominal</div>
-            <div className="text-xl font-bold text-neutral-900">
+          <div className="p-4 bg-[var(--f)] rounded-2xl">
+            <div className="text-xs text-[var(--mu)] mb-1">Kenaikan Gaji Nominal</div>
+            <div className="text-xl font-bold text-[var(--tx)]">
               +{formatRupiah(result.salaryIncreaseAmount)}
             </div>
-            <div className="text-[11px] text-blue-600 font-semibold mt-1">
+            <div className="text-[11px] text-[var(--ac)] font-semibold mt-1">
               +{result.salaryIncreasePercentage}% dari gaji lama
             </div>
           </div>
 
-          <div className="p-4 bg-neutral-50 rounded-xl">
-            <div className="text-xs text-neutral-500 mb-1">Kenaikan Biaya Hidup</div>
-            <div className="text-xl font-bold text-neutral-900">
+          <div className="p-4 bg-[var(--f)] rounded-2xl">
+            <div className="text-xs text-[var(--mu)] mb-1">Kenaikan Biaya Hidup</div>
+            <div className="text-xl font-bold text-[var(--tx)]">
               +{formatRupiah(result.expenseDifferenceAmount)}
             </div>
-            <div className="text-[11px] text-amber-600 font-semibold mt-1">
+            <div className="text-[11px] text-[var(--w)] font-semibold mt-1">
               +{result.expenseDifferencePercentage}% pengeluaran tambahan
             </div>
           </div>
 
-          <div className="p-4 bg-neutral-50 rounded-xl">
-            <div className="text-xs text-neutral-500 mb-1">Dampak ke Tabungan Tahunan</div>
+          <div className="p-4 bg-[var(--f)] rounded-2xl">
+            <div className="text-xs text-[var(--mu)] mb-1">Dampak ke Tabungan Tahunan</div>
             <div
               className={`text-xl font-bold ${
-                result.disposableIncomeDifference >= 0 ? 'text-emerald-600' : 'text-rose-600'
+                result.disposableIncomeDifference >= 0 ? 'text-[var(--ok)]' : 'text-[var(--r)]'
               }`}
             >
               {result.disposableIncomeDifference >= 0 ? '+' : ''}
               {formatRupiah(result.disposableIncomeDifference * 12)}
             </div>
-            <div className="text-[11px] text-neutral-500 mt-1">Akumulasi 12 bulan</div>
+            <div className="text-[11px] text-[var(--mu)] mt-1">Akumulasi 12 bulan</div>
           </div>
         </div>
       </div>
 
       {/* Next Actions */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-6 bg-neutral-100 rounded-2xl">
-        <div className="text-xs text-neutral-600 text-center sm:text-left">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-[var(--f)] rounded-2xl border border-[var(--bd)]">
+        <div className="text-xs text-[var(--mu)] text-center sm:text-left">
           Ingin menghitung ongkos pindahan fisik dari {currentCityObj.name} ke {offerCityObj.name}?
         </div>
         <div className="flex gap-2">
           <Link
             to={`/relocation?city=${offerCityId}`}
-            className="text-xs font-semibold px-4 py-2 bg-neutral-900 hover:bg-neutral-800 text-white rounded-xl transition"
+            className="text-xs font-semibold px-4 py-2.5 bg-[var(--tx)] hover:opacity-90 text-[var(--c)] rounded-xl transition"
           >
             Hitung Modal Relokasi →
           </Link>
           <Link
             to={`/reverse-calculator?city=${offerCityId}`}
-            className="text-xs font-semibold px-4 py-2 bg-white border border-neutral-300 text-neutral-800 hover:bg-neutral-50 rounded-xl transition"
+            className="text-xs font-semibold px-4 py-2.5 bg-[var(--c)] border border-[var(--bd)] text-[var(--tx)] hover:bg-[var(--f)] rounded-xl transition"
           >
             Berapa Gaji Idealnya?
           </Link>

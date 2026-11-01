@@ -96,13 +96,13 @@ export function ReverseCalculatorPage() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto mb-10">
-        <span className="inline-block text-xs font-semibold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full mb-3">
+        <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[var(--ac)] bg-[var(--f)] px-3 py-1 rounded-full mb-3">
           Kalkulator Target Gaji (Reverse)
         </span>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight mb-3">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--tx)] tracking-tight mb-3">
           Berapa Gaji yang Harus Dinegosiasi?
         </h1>
-        <p className="text-sm sm:text-base text-neutral-600">
+        <p className="text-sm sm:text-base text-[var(--mu)]">
           Tentukan target tabungan bersih dan gaya hidup Anda di kota tujuan. Kami hitungkan estimasi gaji bersih (THP) serta gaji kotor sebelum potongan PPh 21 & BPJS.
         </p>
       </div>
@@ -111,18 +111,18 @@ export function ReverseCalculatorPage() {
         {/* Left: Input Form */}
         <div className="lg:col-span-7 space-y-6">
           {/* Target Savings Card */}
-          <div className="apple-card p-6 bg-white border border-neutral-200/80 rounded-2xl shadow-sm">
-            <h2 className="text-base font-bold text-neutral-900 mb-4 flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+          <div className="apple-card">
+            <h2 className="text-base font-bold text-[var(--tx)] mb-4 flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[var(--ac)]"></span>
               1. Target Tabungan Bulanan
             </h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-medium text-neutral-600 mb-1">
+                <label className="block text-xs font-medium text-[var(--mu)] mb-1">
                   Berapa uang yang ingin Anda sisihkan bersih setiap bulan?
                 </label>
                 <div className="relative">
-                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-sm font-semibold text-neutral-400">
+                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-sm font-semibold text-[var(--mu)]">
                     Rp
                   </span>
                   <input
@@ -131,7 +131,7 @@ export function ReverseCalculatorPage() {
                     min="0"
                     value={targetSavingsMonthly}
                     onChange={(e) => setTargetSavingsMonthly(Number(e.target.value) || 0)}
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg font-bold text-neutral-900"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[var(--bd)] bg-[var(--f)] text-[var(--tx)] focus:outline-none focus:ring-2 focus:ring-[var(--ac)] text-lg font-bold"
                   />
                 </div>
               </div>
@@ -145,8 +145,8 @@ export function ReverseCalculatorPage() {
                     onClick={() => setTargetSavingsMonthly(amt)}
                     className={`text-xs px-3 py-1.5 rounded-lg border font-medium transition ${
                       targetSavingsMonthly === amt
-                        ? 'bg-blue-600 text-white border-blue-600'
-                        : 'bg-neutral-50 text-neutral-700 border-neutral-200 hover:bg-neutral-100'
+                        ? 'bg-[var(--ac)] text-white border-[var(--ac)]'
+                        : 'bg-[var(--f)] text-[var(--tx)] border-[var(--bd)] hover:opacity-80'
                     }`}
                   >
                     {formatRupiah(amt)}/bln
@@ -157,21 +157,21 @@ export function ReverseCalculatorPage() {
           </div>
 
           {/* City & Profile Selection */}
-          <div className="apple-card p-6 bg-white border border-neutral-200/80 rounded-2xl shadow-sm">
-            <h2 className="text-base font-bold text-neutral-900 mb-4 flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+          <div className="apple-card">
+            <h2 className="text-base font-bold text-[var(--tx)] mb-4 flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[var(--ac)]"></span>
               2. Kota & Profil Kehidupan
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div>
-                <label className="block text-xs font-medium text-neutral-600 mb-1">
+                <label className="block text-xs font-medium text-[var(--mu)] mb-1">
                   Kota Domisili Pekerjaan
                 </label>
                 <select
                   value={cityId}
                   onChange={(e) => handleCityChange(e.target.value)}
-                  className="w-full px-3 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm font-medium text-neutral-800 bg-white"
+                  className="w-full px-3 py-2.5 rounded-xl border border-[var(--bd)] bg-[var(--f)] text-[var(--tx)] focus:outline-none focus:ring-2 focus:ring-[var(--ac)] text-sm font-medium"
                 >
                   {citiesData.map((c) => (
                     <option key={c.id} value={c.id}>
@@ -182,13 +182,13 @@ export function ReverseCalculatorPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-neutral-600 mb-1">
+                <label className="block text-xs font-medium text-[var(--mu)] mb-1">
                   Profil Rumah Tangga
                 </label>
                 <select
                   value={profile}
                   onChange={(e) => handleProfileChange(e.target.value as LivingProfileType)}
-                  className="w-full px-3 py-2.5 rounded-xl border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm font-medium text-neutral-800 bg-white"
+                  className="w-full px-3 py-2.5 rounded-xl border border-[var(--bd)] bg-[var(--f)] text-[var(--tx)] focus:outline-none focus:ring-2 focus:ring-[var(--ac)] text-sm font-medium"
                 >
                   <option value="single">Lajang Sendiri (Single)</option>
                   <option value="single_shared">Lajang Berbagi Hunian (Shared)</option>
@@ -199,69 +199,69 @@ export function ReverseCalculatorPage() {
             </div>
 
             {/* Living Cost Breakdown inputs */}
-            <div className="mt-4 pt-4 border-t border-neutral-100">
+            <div className="mt-4 pt-4 border-t border-[var(--bd)]">
               <div className="flex justify-between items-center mb-3">
-                <span className="text-xs font-semibold text-neutral-700 uppercase">
+                <span className="text-xs font-semibold text-[var(--mu)] uppercase">
                   Estimasi Biaya Hidup Bulanan ({selectedCity.name})
                 </span>
-                <span className="text-xs text-blue-600 font-bold">
+                <span className="text-xs text-[var(--ac)] font-bold">
                   Total: {formatRupiah(totalExpenseVal)}
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                 <div>
-                  <label className="text-neutral-500">Sewa Hunian</label>
+                  <label className="text-[var(--mu)]">Sewa Hunian</label>
                   <input
                     type="number"
                     value={expenses.housing}
                     onChange={(e) => handleExpenseChange('housing', Number(e.target.value))}
-                    className="w-full mt-1 p-2 border border-neutral-200 rounded-lg text-neutral-800 font-medium"
+                    className="w-full mt-1 p-2 border border-[var(--bd)] bg-[var(--f)] text-[var(--tx)] rounded-lg font-medium"
                   />
                 </div>
                 <div>
-                  <label className="text-neutral-500">Makan & Minum</label>
+                  <label className="text-[var(--mu)]">Makan & Minum</label>
                   <input
                     type="number"
                     value={expenses.food}
                     onChange={(e) => handleExpenseChange('food', Number(e.target.value))}
-                    className="w-full mt-1 p-2 border border-neutral-200 rounded-lg text-neutral-800 font-medium"
+                    className="w-full mt-1 p-2 border border-[var(--bd)] bg-[var(--f)] text-[var(--tx)] rounded-lg font-medium"
                   />
                 </div>
                 <div>
-                  <label className="text-neutral-500">Transportasi</label>
+                  <label className="text-[var(--mu)]">Transportasi</label>
                   <input
                     type="number"
                     value={expenses.transportation}
                     onChange={(e) => handleExpenseChange('transportation', Number(e.target.value))}
-                    className="w-full mt-1 p-2 border border-neutral-200 rounded-lg text-neutral-800 font-medium"
+                    className="w-full mt-1 p-2 border border-[var(--bd)] bg-[var(--f)] text-[var(--tx)] rounded-lg font-medium"
                   />
                 </div>
                 <div>
-                  <label className="text-neutral-500">Utilitas & Kuota</label>
+                  <label className="text-[var(--mu)]">Utilitas & Kuota</label>
                   <input
                     type="number"
                     value={expenses.utilities}
                     onChange={(e) => handleExpenseChange('utilities', Number(e.target.value))}
-                    className="w-full mt-1 p-2 border border-neutral-200 rounded-lg text-neutral-800 font-medium"
+                    className="w-full mt-1 p-2 border border-[var(--bd)] bg-[var(--f)] text-[var(--tx)] rounded-lg font-medium"
                   />
                 </div>
                 <div>
-                  <label className="text-neutral-500">Gaya Hidup & Nongkrong</label>
+                  <label className="text-[var(--mu)]">Gaya Hidup & Nongkrong</label>
                   <input
                     type="number"
                     value={expenses.lifestyle}
                     onChange={(e) => handleExpenseChange('lifestyle', Number(e.target.value))}
-                    className="w-full mt-1 p-2 border border-neutral-200 rounded-lg text-neutral-800 font-medium"
+                    className="w-full mt-1 p-2 border border-[var(--bd)] bg-[var(--f)] text-[var(--tx)] rounded-lg font-medium"
                   />
                 </div>
                 <div>
-                  <label className="text-neutral-500">Cicilan / Kewajiban</label>
+                  <label className="text-[var(--mu)]">Cicilan / Kewajiban</label>
                   <input
                     type="number"
                     value={expenses.financialObligations}
                     onChange={(e) => handleExpenseChange('financialObligations', Number(e.target.value))}
-                    className="w-full mt-1 p-2 border border-neutral-200 rounded-lg text-neutral-800 font-medium"
+                    className="w-full mt-1 p-2 border border-[var(--bd)] bg-[var(--f)] text-[var(--tx)] rounded-lg font-medium"
                   />
                 </div>
               </div>
@@ -269,18 +269,18 @@ export function ReverseCalculatorPage() {
           </div>
 
           {/* Tax & BPJS Settings */}
-          <div className="apple-card p-6 bg-white border border-neutral-200/80 rounded-2xl shadow-sm">
+          <div className="apple-card">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-base font-bold text-neutral-900 flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+              <h2 className="text-base font-bold text-[var(--tx)] flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--ac)]"></span>
                 3. Simulasi Potongan Pajak & BPJS
               </h2>
-              <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-neutral-700">
+              <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-[var(--tx)]">
                 <input
                   type="checkbox"
                   checked={includeTaxDeduction}
                   onChange={(e) => setIncludeTaxDeduction(e.target.checked)}
-                  className="rounded text-blue-600 focus:ring-blue-500 h-4 w-4"
+                  className="rounded text-[var(--ac)] focus:ring-[var(--ac)] h-4 w-4"
                 />
                 Hitung Gaji Kotor (Gross)
               </label>
@@ -288,7 +288,7 @@ export function ReverseCalculatorPage() {
 
             {includeTaxDeduction && (
               <div>
-                <label className="block text-xs font-medium text-neutral-600 mb-1">
+                <label className="block text-xs font-medium text-[var(--mu)] mb-1">
                   Status PTKP (Penghasilan Tidak Kena Pajak)
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -299,16 +299,16 @@ export function ReverseCalculatorPage() {
                       onClick={() => setPtkpStatus(opt.value)}
                       className={`text-left p-2.5 rounded-xl border transition ${
                         ptkpStatus === opt.value
-                          ? 'border-blue-600 bg-blue-50/50 text-blue-900'
-                          : 'border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300'
+                          ? 'border-[var(--ac)] bg-[var(--f)] text-[var(--ac)] font-bold'
+                          : 'border-[var(--bd)] bg-[var(--c)] text-[var(--tx)] hover:opacity-80'
                       }`}
                     >
                       <div className="text-xs font-bold">{opt.label}</div>
-                      <div className="text-[10px] text-neutral-500">{opt.desc}</div>
+                      <div className="text-[10px] text-[var(--mu)]">{opt.desc}</div>
                     </button>
                   ))}
                 </div>
-                <p className="text-[11px] text-neutral-500 mt-3 leading-relaxed">
+                <p className="text-[11px] text-[var(--mu)] mt-3 leading-relaxed">
                   Perhitungan menggunakan tarif PPh 21 TER (Tarif Efektif Rata-Rata) PP 58/2023, BPJS Ketenagakerjaan JHT (2%) + JP (1% maks basis 10.5jt), dan BPJS Kesehatan (1% maks basis 12jt).
                 </p>
               </div>

@@ -223,13 +223,13 @@ export function CalculatorPage() {
 
               {/* Gross mode breakdown */}
               {incomeType === 'gross' && taxCalculation && (
-                <div className="p-3 bg-neutral-50 rounded-xl border border-neutral-200/80 mb-4 text-xs space-y-1.5">
-                  <div className="flex justify-between items-center pb-1.5 border-b border-neutral-200">
-                    <span className="font-semibold text-neutral-700">Status PTKP:</span>
+                <div className="p-3.5 bg-[var(--f)] rounded-2xl border border-[var(--bd)] mb-4 text-xs space-y-2">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-2 border-b border-[var(--bd)] gap-1">
+                    <span className="font-semibold text-[var(--tx)]">Status PTKP:</span>
                     <select
                       value={ptkpStatus}
                       onChange={(e) => setPtkpStatus(e.target.value as PTKPStatus)}
-                      className="bg-white border border-neutral-300 rounded px-2 py-0.5 font-medium"
+                      className="bg-[var(--c)] text-[var(--tx)] border border-[var(--bd)] rounded-lg px-2.5 py-1 font-medium focus:outline-none"
                     >
                       <option value="TK/0">TK/0 (Lajang tanpa tanggungan)</option>
                       <option value="TK/1">TK/1 (Lajang 1 tanggungan)</option>
@@ -239,21 +239,21 @@ export function CalculatorPage() {
                       <option value="K/3">K/3 (Kawin 3 tanggungan)</option>
                     </select>
                   </div>
-                  <div className="flex justify-between text-neutral-600">
+                  <div className="flex justify-between text-[var(--mu)]">
                     <span>BPJS Ketenagakerjaan (JHT 2% + JP 1%):</span>
-                    <span>-{formatRupiah(taxCalculation.bpjsKetenagakerjaanJht + taxCalculation.bpjsKetenagakerjaanJp)}</span>
+                    <span className="font-medium text-[var(--tx)]">-{formatRupiah(taxCalculation.bpjsKetenagakerjaanJht + taxCalculation.bpjsKetenagakerjaanJp)}</span>
                   </div>
-                  <div className="flex justify-between text-neutral-600">
+                  <div className="flex justify-between text-[var(--mu)]">
                     <span>BPJS Kesehatan (1%):</span>
-                    <span>-{formatRupiah(taxCalculation.bpjsKesehatan)}</span>
+                    <span className="font-medium text-[var(--tx)]">-{formatRupiah(taxCalculation.bpjsKesehatan)}</span>
                   </div>
-                  <div className="flex justify-between text-neutral-600">
+                  <div className="flex justify-between text-[var(--mu)]">
                     <span>PPh 21 TER ({(taxCalculation.pph21EffectiveRate * 100).toFixed(2)}%):</span>
-                    <span>-{formatRupiah(taxCalculation.pph21Monthly)}</span>
+                    <span className="font-medium text-[var(--tx)]">-{formatRupiah(taxCalculation.pph21Monthly)}</span>
                   </div>
-                  <div className="flex justify-between font-bold text-neutral-900 pt-1 border-t border-neutral-200">
+                  <div className="flex justify-between font-bold text-[var(--tx)] pt-1.5 border-t border-[var(--bd)]">
                     <span>Estimasi Gaji Bersih Diterima:</span>
-                    <span className="text-blue-600">{formatRupiah(taxCalculation.takeHomePay)}</span>
+                    <span className="text-[var(--ac)]">{formatRupiah(taxCalculation.takeHomePay)}</span>
                   </div>
                 </div>
               )}
@@ -343,8 +343,8 @@ export function CalculatorPage() {
 
               {/* RENTAL PRESETS DARI DATABASE REAL */}
               {cityRentals.length > 0 && (
-                <div className="p-3 bg-neutral-50 rounded-xl mb-4 border border-neutral-200/80">
-                  <span className="text-[11px] font-bold text-neutral-600 uppercase tracking-wider block mb-2">
+                <div className="p-3.5 bg-[var(--f)] rounded-2xl mb-4 border border-[var(--bd)]">
+                  <span className="text-[11px] font-bold text-[var(--mu)] uppercase tracking-wider block mb-2">
                     Gunakan Patokan Sewa Riil {selectedCityObj?.name}:
                   </span>
                   <div className="flex flex-wrap gap-2">
@@ -353,12 +353,12 @@ export function CalculatorPage() {
                         key={idx}
                         type="button"
                         onClick={() => applyRentalPreset(r.monthlyPriceMedian || 1500000)}
-                        className="text-xs px-2.5 py-1.5 bg-white border border-neutral-200 hover:border-blue-400 rounded-lg text-left"
+                        className="text-xs px-3 py-1.5 bg-[var(--c)] border border-[var(--bd)] hover:border-[var(--ac)] rounded-xl text-left transition"
                       >
-                        <div className="font-semibold text-neutral-800 capitalize">
+                        <div className="font-semibold text-[var(--tx)] capitalize">
                           {r.housingType.replace('_', ' ')}
                         </div>
-                        <div className="text-[11px] text-blue-600 font-bold">
+                        <div className="text-[11px] text-[var(--ac)] font-bold">
                           {formatRupiah(r.monthlyPriceMedian)}/bln
                         </div>
                       </button>
@@ -368,8 +368,8 @@ export function CalculatorPage() {
               )}
 
               {/* COMMUTE MODE PRESETS */}
-              <div className="p-3 bg-neutral-50 rounded-xl mb-4 border border-neutral-200/80">
-                <span className="text-[11px] font-bold text-neutral-600 uppercase tracking-wider block mb-2">
+              <div className="p-3.5 bg-[var(--f)] rounded-2xl mb-4 border border-[var(--bd)]">
+                <span className="text-[11px] font-bold text-[var(--mu)] uppercase tracking-wider block mb-2">
                   Pilih Moda Komuter Harian:
                 </span>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -378,14 +378,14 @@ export function CalculatorPage() {
                       key={opt.id}
                       type="button"
                       onClick={() => applyCommutePreset(opt.id, opt.baseCost)}
-                      className={`text-left p-2 rounded-lg border text-xs transition ${
+                      className={`text-left p-2.5 rounded-xl border text-xs transition ${
                         selectedCommute === opt.id
-                          ? 'border-blue-500 bg-blue-50 text-blue-900 font-semibold'
-                          : 'border-neutral-200 bg-white text-neutral-700 hover:bg-neutral-50'
+                          ? 'border-[var(--ac)] bg-[var(--c)] text-[var(--ac)] font-semibold shadow-sm'
+                          : 'border-[var(--bd)] bg-[var(--c)] text-[var(--tx)] hover:opacity-85'
                       }`}
                     >
-                      <div>{opt.label}</div>
-                      <div className="text-[10px] text-neutral-500">
+                      <div className="font-medium">{opt.label}</div>
+                      <div className="text-[10px] text-[var(--mu)]">
                         {formatRupiah(opt.baseCost)}/bln
                       </div>
                     </button>
