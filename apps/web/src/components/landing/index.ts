@@ -4,3 +4,7 @@ export * from './LandingSimFlow';
 export * from './LandingCompareQuick';
 export * from './LandingPresets';
 export * from './LandingFAQ';
+export * from './LandingDeco';
+export * from './LandingDotMap';
+export * from './LandingStatement';
+export * from './LandingCityRanking';

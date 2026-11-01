@@ -11,6 +11,9 @@ import {
   LandingCompareQuick,
   LandingPresets,
   LandingFAQ,
+  LandingDeco,
+  LandingStatement,
+  LandingCityRanking,
   PresetItem
 } from '@/components/landing';
 
@@ -140,8 +143,11 @@ export function HomePage() {
         />
       </Helmet>
 
-      <div className="max-w-[1080px] mx-auto px-5 pt-8 pb-16">
-        {/* 1. HERO SECTION */}
+      <div className="max-w-[1080px] mx-auto px-5 pt-8 pb-16 relative">
+        {/* Floating 3D Geometric Decorators */}
+        <LandingDeco />
+
+        {/* 1. HERO SECTION WITH DOT MAP */}
         <LandingHero
           sliderIncome={sliderIncome}
           setSliderIncome={setSliderIncome}
@@ -153,26 +159,32 @@ export function HomePage() {
           getStatusColor={getStatusColor}
         />
 
-        {/* 2. STATS & CITY MARQUEE */}
+        {/* 2. STATS & MARQUEE TICKER */}
         <LandingMarquee cities={cities} />
 
-        {/* 3. SIMULASI SALDO SATU BULAN */}
+        {/* 3. STATEMENT CALLOUT */}
+        <LandingStatement />
+
+        {/* 4. CASHFLOW ALLOCATION BAR */}
         <LandingSimFlow selectedCity={selectedCity} quickSimulation={quickSimulation} />
 
-        {/* 4. PROYEKSI TABUNGAN MULTI-TAHUN */}
-        <section className="mt-14">
+        {/* 5. 10-CITY RANKING DUEL */}
+        <LandingCityRanking cities={cities} income={sliderIncome} />
+
+        {/* 6. PROYEKSI TABUNGAN MULTI-TAHUN */}
+        <section className="mt-16">
           <h2 className="apple-h2">Tabunganmu nanti</h2>
-          <p className="text-[var(--mu)] text-sm -mt-2 mb-5">
+          <p className="note">
             Jika sisa uang {formatRupiah(quickSimulation.remainingIncome)} di {selectedCity?.name} rutin ditabung.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[1, 3, 5].map((year) => {
               const projected = quickSimulation.remainingIncome * 12 * year;
               return (
-                <div key={year} className="apple-card">
+                <div key={year} className="card">
                   <p className="text-[var(--mu)] text-sm">{year} tahun</p>
                   <div
-                    className={`text-[26px] font-bold mt-1 ${
+                    className={`text-[28px] font-bold mt-1 tracking-tight ${
                       projected < 0 ? 'text-[var(--r)]' : 'text-[var(--ac)]'
                     }`}
                   >
@@ -184,7 +196,7 @@ export function HomePage() {
           </div>
         </section>
 
-        {/* 5. PERBANDINGAN PINDAH KOTA CEPAT */}
+        {/* 7. PERBANDINGAN PINDAH KOTA CEPAT */}
         <LandingCompareQuick
           cities={cities}
           cityFrom={cityFrom}
@@ -194,10 +206,10 @@ export function HomePage() {
           diffYearly={diffYearly}
         />
 
-        {/* 6. SITUASI / PRESETS AWAL */}
+        {/* 8. SITUASI / PRESETS AWAL */}
         <LandingPresets presets={presets} onApplyPreset={handleApplyPreset} />
 
-        {/* 7. TIGA LANGKAH, FAQ, & CTA */}
+        {/* 9. TIGA LANGKAH, FAQ, & CTA */}
         <LandingFAQ />
       </div>
     </>

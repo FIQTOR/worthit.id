@@ -21,7 +21,7 @@ export function Layout({ children }: LayoutProps) {
     // Spotlight cursor effect on cards
     const handlePointerMove = (e: PointerEvent) => {
       const target = e.target as HTMLElement | null;
-      const card = target?.closest('.apple-card') as HTMLElement | null;
+      const card = target?.closest('.apple-card, .card') as HTMLElement | null;
       if (card) {
         const rect = card.getBoundingClientRect();
         card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
@@ -39,10 +39,11 @@ export function Layout({ children }: LayoutProps) {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col selection:bg-[var(--ac)] selection:text-white">
+    <div className="min-h-screen flex flex-col selection:bg-[var(--ac)] selection:text-white relative">
       <div id="scroll-progress"></div>
+      <div className="grain" aria-hidden="true"></div>
       <Navbar />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 relative z-10">{children}</main>
       <Footer />
     </div>
   );
