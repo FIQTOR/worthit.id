@@ -5,8 +5,15 @@ export function Footer() {
     <footer className="max-w-[1080px] mx-auto mt-12 px-5 py-8 pb-24 border-t border-[var(--bd)] text-[var(--mu)] text-[13px]">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <div>
-          <div className="font-semibold text-[19px] tracking-[-0.4px] text-[var(--tx)]">
-            Worth<b className="text-[var(--ac)]">It</b>
+          <div className="font-bold text-[19px] tracking-[-0.4px] text-[var(--tx)] flex items-center gap-2">
+            <img
+              src="/favicon.svg"
+              alt="WorthIt Logo"
+              className="w-6 h-6 object-contain"
+              width="24"
+              height="24"
+            />
+            <span>Worth<b className="text-[var(--ac)]">It</b></span>
           </div>
           <p className="mt-2 max-w-[300px] leading-relaxed">
             Simulasi biaya hidup di 30 kota Indonesia. Gratis, tanpa akun, tanpa AI spekulatif.

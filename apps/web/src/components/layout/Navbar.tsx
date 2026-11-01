@@ -26,8 +26,17 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-[var(--nav)] border-b border-[var(--bd)] transition-colors duration-200">
       <div className="max-w-[1080px] mx-auto px-4 sm:px-5 h-[56px] flex items-center justify-between gap-2">
-        <Link to="/" className="font-bold text-[19px] tracking-[-0.4px] text-[var(--tx)] flex items-center gap-1.5 shrink-0">
-          <span>Worth</span><span className="text-[var(--ac)]">It</span>
+        <Link to="/" className="font-bold text-[19px] tracking-[-0.4px] text-[var(--tx)] flex items-center gap-2 shrink-0 group">
+          <img
+            src="/favicon.svg"
+            alt="WorthIt Logo"
+            className="w-7 h-7 object-contain transition-transform group-hover:scale-105"
+            width="28"
+            height="28"
+          />
+          <span className="flex items-center">
+            <span>Worth</span><span className="text-[var(--ac)]">It</span>
+          </span>
         </Link>
 
         {/* Desktop links */}

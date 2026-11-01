@@ -114,9 +114,13 @@ export function ResultPage() {
 
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-blue-500 flex items-center justify-center font-black text-white text-base">
-                  W
-                </div>
+                <img
+                  src="/favicon.svg"
+                  alt="WorthIt Logo"
+                  className="w-8 h-8 object-contain"
+                  width="32"
+                  height="32"
+                />
                 <div>
                   <div className="font-extrabold text-sm tracking-tight text-white leading-none">
                     worthit<span className="text-blue-400">.id</span>
