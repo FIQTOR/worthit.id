@@ -1,0 +1,572 @@
+[
+  {
+    "id": "jakarta",
+    "name": "Jakarta",
+    "province": "DKI Jakarta",
+    "administrativeLevel": "special_capital_region",
+    "currency": "IDR",
+    "coordinates": { "latitude": -6.2088, "longitude": 106.8456 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 2845000,
+      "foodExpenditure": 1120000,
+      "nonFoodExpenditure": 1725000,
+      "umk": 5067381
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.18 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Ibu kota perekonomian dan pusat bisnis Indonesia dengan variasi biaya hidup tertinggi, didukung jaringan MRT, LRT, dan TransJakarta."
+  },
+  {
+    "id": "surabaya",
+    "name": "Surabaya",
+    "province": "Jawa Timur",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -7.2575, "longitude": 112.7521 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 2180000,
+      "foodExpenditure": 890000,
+      "nonFoodExpenditure": 1290000,
+      "umk": 4725479
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 1.95 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota metropolitan terbesar kedua di Indonesia, pusat perdagangan dan industri Jawa Timur dengan biaya kuliner dan hunian yang kompetitif."
+  },
+  {
+    "id": "bandung",
+    "name": "Bandung",
+    "province": "Jawa Barat",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -6.9175, "longitude": 107.6191 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1890000,
+      "foodExpenditure": 820000,
+      "nonFoodExpenditure": 1070000,
+      "umk": 4209309
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.05 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota pendidikan dan kreatif dengan iklim sejuk, magnet bagi pekerja jarak jauh, mahasiswa, dan profesional industri digital."
+  },
+  {
+    "id": "yogyakarta",
+    "name": "Yogyakarta",
+    "province": "DI Yogyakarta",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -7.7956, "longitude": 110.3695 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1650000,
+      "foodExpenditure": 710000,
+      "nonFoodExpenditure": 940000,
+      "umk": 2492997
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.31 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota pelajar dan kebudayaan terkemuka dengan biaya kuliner relatif terjangkau serta ekosistem komunitas yang ramah."
+  },
+  {
+    "id": "semarang",
+    "name": "Semarang",
+    "province": "Jawa Tengah",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -6.9667, "longitude": 110.4167 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1720000,
+      "foodExpenditure": 760000,
+      "nonFoodExpenditure": 960000,
+      "umk": 3243969
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 1.88 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Ibu kota Jawa Tengah yang berkembang pesat sebagai simpul logistik, manufaktur, dan perkotaan dengan biaya hidup stabil."
+  },
+  {
+    "id": "medan",
+    "name": "Medan",
+    "province": "Sumatera Utara",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": 3.5952, "longitude": 98.6722 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1880000,
+      "foodExpenditure": 870000,
+      "nonFoodExpenditure": 1010000,
+      "umk": 3769082
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.45 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Pusat perekonomian terpenting di Pulau Sumatera dengan keberagaman kuliner legendaris dan aktivitas komersial internasional."
+  },
+  {
+    "id": "makassar",
+    "name": "Makassar",
+    "province": "Sulawesi Selatan",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -5.1477, "longitude": 119.4327 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1790000,
+      "foodExpenditure": 810000,
+      "nonFoodExpenditure": 980000,
+      "umk": 3643751
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.22 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Gerbang utama Indonesia Timur dengan pelabuhan strategis, perkembangan infrastruktur modern, dan pusat bisnis regional."
+  },
+  {
+    "id": "denpasar",
+    "name": "Denpasar",
+    "province": "Bali",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -8.6705, "longitude": 115.2126 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 2050000,
+      "foodExpenditure": 890000,
+      "nonFoodExpenditure": 1160000,
+      "umk": 3156307
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.58 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Ibu kota Provinsi Bali dengan denyut pariwisata internasional, komunitas digital nomad dunia, dan dinamika harga hunian variatif."
+  },
+  {
+    "id": "malang",
+    "name": "Malang",
+    "province": "Jawa Timur",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -7.9797, "longitude": 112.6304 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1750000,
+      "foodExpenditure": 780000,
+      "nonFoodExpenditure": 970000,
+      "umk": 3309144
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.12 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota pendidikan sejuk di Jawa Timur dengan banyak universitas besar dan biaya hidup bersahabat bagi mahasiswa."
+  },
+  {
+    "id": "surakarta",
+    "name": "Surakarta (Solo)",
+    "province": "Jawa Tengah",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -7.5755, "longitude": 110.8243 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1580000,
+      "foodExpenditure": 690000,
+      "nonFoodExpenditure": 890000,
+      "umk": 2269070
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 1.98 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota budaya dengan kuliner sangat terjangkau, transportasi batik solo trans terintegrasi, dan kenyamanan hidup tinggi."
+  },
+  {
+    "id": "bogor",
+    "name": "Bogor",
+    "province": "Jawa Barat",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -6.5971, "longitude": 106.8060 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1980000,
+      "foodExpenditure": 840000,
+      "nonFoodExpenditure": 1140000,
+      "umk": 4813988
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.15 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota hujan penyangga Jakarta dengan akses Commuter Line langsung, lingkungan hijau, dan kawasan hunian favorit komuter."
+  },
+  {
+    "id": "depok",
+    "name": "Depok",
+    "province": "Jawa Barat",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -6.4025, "longitude": 106.7942 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 2080000,
+      "foodExpenditure": 870000,
+      "nonFoodExpenditure": 1210000,
+      "umk": 4878612
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.20 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota pendidikan utama di selatan Jakarta, rumah bagi kampus UI dan Gunadarma dengan ekosistem kost dan kuliner padat."
+  },
+  {
+    "id": "tangerang",
+    "name": "Tangerang",
+    "province": "Banten",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -6.1783, "longitude": 106.6319 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 2150000,
+      "foodExpenditure": 890000,
+      "nonFoodExpenditure": 1260000,
+      "umk": 4760289
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.25 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kawasan industri dan penyangga barat Jakarta yang terhubung dekat dengan Bandara Internasional Soekarno-Hatta."
+  },
+  {
+    "id": "tangerang_selatan",
+    "name": "Tangerang Selatan",
+    "province": "Banten",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -6.2885, "longitude": 106.7179 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 2350000,
+      "foodExpenditure": 950000,
+      "nonFoodExpenditure": 1400000,
+      "umk": 4670791
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.30 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Pusat kawasan modern BSD, Bintaro, dan Pamulang dengan fasilitas komersial lengkap dan gaya hidup urban mandiri."
+  },
+  {
+    "id": "bekasi",
+    "name": "Bekasi",
+    "province": "Jawa Barat",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -6.2383, "longitude": 106.9756 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 2220000,
+      "foodExpenditure": 910000,
+      "nonFoodExpenditure": 1310000,
+      "umk": 5343430
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.10 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Sentra industri dan kota komuter timur Jakarta dengan UMK tertinggi di Jawa Barat dan jaringan LRT Jabodebek."
+  },
+  {
+    "id": "batam",
+    "name": "Batam",
+    "province": "Kepulauan Riau",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": 1.1301, "longitude": 104.0529 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 2420000,
+      "foodExpenditure": 980000,
+      "nonFoodExpenditure": 1440000,
+      "umk": 4685050
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.40 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kawasan perdagangan bebas internasional strategis bersebelahan langsung dengan Singapura dan Malaysia."
+  },
+  {
+    "id": "pekanbaru",
+    "name": "Pekanbaru",
+    "province": "Riau",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": 0.5071, "longitude": 101.4478 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1950000,
+      "foodExpenditure": 860000,
+      "nonFoodExpenditure": 1090000,
+      "umk": 3411160
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.35 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Pusat industri minyak dan perkebunan di Sumatera dengan pertumbuhan perdagangan dan properti yang stabil."
+  },
+  {
+    "id": "palembang",
+    "name": "Palembang",
+    "province": "Sumatera Selatan",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -2.9761, "longitude": 104.7754 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1820000,
+      "foodExpenditure": 820000,
+      "nonFoodExpenditure": 1000000,
+      "umk": 3677591
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.18 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota sungai tertua di Indonesia dengan LRT Sumatera Selatan, kekayaan kuliner pempek, dan industri komoditas."
+  },
+  {
+    "id": "bandar_lampung",
+    "name": "Bandar Lampung",
+    "province": "Lampung",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -5.3971, "longitude": 105.2668 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1690000,
+      "foodExpenditure": 770000,
+      "nonFoodExpenditure": 920000,
+      "umk": 3103631
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.22 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Pintu gerbang penyeberangan Selat Sunda antara Jawa dan Sumatera dengan akses Jalan Tol Trans-Sumatera."
+  },
+  {
+    "id": "padang",
+    "name": "Padang",
+    "province": "Sumatera Barat",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -0.9471, "longitude": 100.4172 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1780000,
+      "foodExpenditure": 830000,
+      "nonFoodExpenditure": 950000,
+      "umk": 2811449
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.30 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Ibu kota Sumatera Barat terkenal dengan pesona pantai barat, budaya Minangkabau, dan kuliner mendunia."
+  },
+  {
+    "id": "pontianak",
+    "name": "Pontianak",
+    "province": "Kalimantan Barat",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -0.0263, "longitude": 109.3425 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1810000,
+      "foodExpenditure": 820000,
+      "nonFoodExpenditure": 990000,
+      "umk": 2843445
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.15 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota khatulistiwa di tepian Sungai Kapuas, pusat perdagangan, industri kayu, dan kuliner khas Kalimantan Barat."
+  },
+  {
+    "id": "balikpapan",
+    "name": "Balikpapan",
+    "province": "Kalimantan Timur",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -1.2379, "longitude": 116.8529 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 2290000,
+      "foodExpenditure": 960000,
+      "nonFoodExpenditure": 1330000,
+      "umk": 3475595
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.42 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Pusat kilang minyak dan pintu gerbang logistik utama menuju Ibu Kota Nusantara (IKN)."
+  },
+  {
+    "id": "samarinda",
+    "name": "Samarinda",
+    "province": "Kalimantan Timur",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -0.5021, "longitude": 117.1536 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1960000,
+      "foodExpenditure": 860000,
+      "nonFoodExpenditure": 1100000,
+      "umk": 3497124
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.28 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Ibu kota Kalimantan Timur yang dibelah Sungai Mahakam, sentra perdagangan dan pemerintahan daerah."
+  },
+  {
+    "id": "banjarmasin",
+    "name": "Banjarmasin",
+    "province": "Kalimantan Selatan",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -3.3194, "longitude": 114.5908 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1840000,
+      "foodExpenditure": 830000,
+      "nonFoodExpenditure": 1010000,
+      "umk": 3379513
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.30 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota seribu sungai dengan tradisi pasar terapung dan pusat perdagangan komoditas Kalimantan Selatan."
+  },
+  {
+    "id": "manado",
+    "name": "Manado",
+    "province": "Sulawesi Utara",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": 1.4748, "longitude": 124.8421 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1920000,
+      "foodExpenditure": 870000,
+      "nonFoodExpenditure": 1050000,
+      "umk": 3590000
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.35 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota bahari di bibir Pasifik dengan destinasi selam Bunaken dan sektor pariwisata yang aktif."
+  },
+  {
+    "id": "mataram",
+    "name": "Mataram",
+    "province": "Nusa Tenggara Barat",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -8.5833, "longitude": 116.1167 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1680000,
+      "foodExpenditure": 760000,
+      "nonFoodExpenditure": 920000,
+      "umk": 2685044
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.20 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Ibu kota Pulau Lombok dengan akses dekat ke kawasan wisata Senggigi, Mandalika, dan kepulauan Gili."
+  },
+  {
+    "id": "kupang",
+    "name": "Kupang",
+    "province": "Nusa Tenggara Timur",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -10.1772, "longitude": 123.6070 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1710000,
+      "foodExpenditure": 790000,
+      "nonFoodExpenditure": 920000,
+      "umk": 2296489
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.45 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Pusat pemerintahan dan pelabuhan kepulauan Nusa Tenggara Timur di pesisir Teluk Kupang."
+  },
+  {
+    "id": "ambon",
+    "name": "Ambon",
+    "province": "Maluku",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -3.6547, "longitude": 128.1906 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1850000,
+      "foodExpenditure": 840000,
+      "nonFoodExpenditure": 1010000,
+      "umk": 2948033
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.50 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota musik dunia UNESCO di Kepulauan Maluku dengan kekayaan rempah, pelabuhan alami, dan biota laut."
+  },
+  {
+    "id": "jayapura",
+    "name": "Jayapura",
+    "province": "Papua",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -2.5916, "longitude": 140.6690 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 2350000,
+      "foodExpenditure": 1050000,
+      "nonFoodExpenditure": 1300000,
+      "umk": 4024270
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 2.65 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Ibu kota Provinsi Papua di pesisir Pasifik utara yang berbatasan langsung dengan negara tetangga Papua Nugini."
+  },
+  {
+    "id": "cirebon",
+    "name": "Cirebon",
+    "province": "Jawa Barat",
+    "administrativeLevel": "city",
+    "currency": "IDR",
+    "coordinates": { "latitude": -6.7320, "longitude": 108.5523 },
+    "benchmarks": {
+      "referenceYear": 2025,
+      "bpsMonthlyPerCapita": 1640000,
+      "foodExpenditure": 730000,
+      "nonFoodExpenditure": 910000,
+      "umk": 2533038
+    },
+    "inflation": { "indexBase": 100, "referencePeriod": "2025", "value": 1.95 },
+    "dataQuality": "complete",
+    "lastUpdated": "2026-04-15",
+    "description": "Kota udang di pesisir utara Jawa Barat dengan warisan keraton, batik megamendung, dan biaya hidup ekonomis."
+  }
+]

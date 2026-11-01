@@ -1,0 +1,79 @@
+[
+  {
+    "id": "bps-sbh-2022",
+    "publisher": "Badan Pusat Statistik (BPS)",
+    "title": "Diagram Timbang Indeks Harga Konsumen Hasil Survei Biaya Hidup 2022",
+    "url": "https://www.bps.go.id/id/publication/2024/02/05/f164320774fe896914f6fe1e/diagram-timbang-indeks-harga-konsumen-hasil-survei-biaya-hidup-2022.html",
+    "referencePeriod": "2022",
+    "publishedAt": "2024-02-05",
+    "retrievedAt": "2026-03-01",
+    "dataType": "official",
+    "notes": "Digunakan untuk bobot struktur pengeluaran komoditas dan klasifikasi kelompok konsumsi rumah tangga."
+  },
+  {
+    "id": "bps-konsumsi-2025",
+    "publisher": "Badan Pusat Statistik (BPS)",
+    "title": "Pengeluaran untuk Konsumsi Penduduk Indonesia September 2025",
+    "url": "https://www.bps.go.id/assets/publication/2026/05/29/057b21b35bc236c5ede9d160/pengeluaran-untuk-konsumsi-penduduk-indonesia-september-2025.html",
+    "referencePeriod": "September 2025",
+    "publishedAt": "2026-05-29",
+    "retrievedAt": "2026-06-10",
+    "dataType": "official",
+    "notes": "Rata-rata pengeluaran per kapita sebulan makanan dan bukan makanan menurut provinsi dan kabupaten/kota."
+  },
+  {
+    "id": "bps-sirusa",
+    "publisher": "Badan Pusat Statistik (BPS)",
+    "title": "Metadata Indikator Statistik: Rata-rata Pengeluaran per Kapita Sebulan",
+    "url": "https://sirusa.bps.go.id/metadata/indikator/5cd875de-6954-4958-486d-dd274ce20396",
+    "referencePeriod": "2024-2026",
+    "publishedAt": "2024-01-10",
+    "retrievedAt": "2026-03-01",
+    "dataType": "official",
+    "notes": "Definisi konseptual pengeluaran per kapita (Susenas) sebagai benchmark baseline."
+  },
+  {
+    "id": "bps-ihk-150",
+    "publisher": "Badan Pusat Statistik (BPS)",
+    "title": "Indeks Harga Konsumen 150 Kabupaten/Kota di Indonesia (2022=100)",
+    "url": "https://www.bps.go.id/id/publication/2026/04/09/da0dd0e5fcbde579950b7e9f/indeks-harga-konsumen-150-kabupaten-kota-di-indonesia-2025-2022-100-.html",
+    "referencePeriod": "2025",
+    "publishedAt": "2026-04-09",
+    "retrievedAt": "2026-05-01",
+    "dataType": "official",
+    "notes": "Tingkat inflasi tahunan kota dan pergerakan indeks harga kelompok pengeluaran."
+  },
+  {
+    "id": "kemnaker-jdih-umk",
+    "publisher": "Kementerian Ketenagakerjaan RI / JDIH Pemprov",
+    "title": "Surat Keputusan Gubernur tentang Upah Minimum Provinsi dan Upah Minimum Kabupaten/Kota Tahun 2025",
+    "url": "https://jdih.kemnaker.go.id/",
+    "referencePeriod": "2025",
+    "publishedAt": "2024-11-30",
+    "retrievedAt": "2025-01-15",
+    "dataType": "official",
+    "notes": "Ketetapan legal UMP dan UMK resmi tahun berjalan di 8 kota acuan."
+  },
+  {
+    "id": "pln-tarif",
+    "publisher": "PT PLN (Persero)",
+    "title": "Tarif Tenaga Listrik (Tariff Adjustment) Non-Subsidi",
+    "url": "https://web.pln.co.id/",
+    "referencePeriod": "2024-2025",
+    "publishedAt": "2024-10-01",
+    "retrievedAt": "2026-01-15",
+    "dataType": "official",
+    "notes": "Tarif listrik reguler R-1/TR 900 VA, 1.300 VA, dan 2.200 VA."
+  },
+  {
+    "id": "market-rental-curation",
+    "publisher": "Tim Riset WorthIt Indonesia (Kurasi Mandiri)",
+    "title": "Survei Sampel Listing Hunian Sewa dan Kost Kota Terpilih",
+    "url": "https://worthit.id/methodology",
+    "referencePeriod": "2025-Q4",
+    "publishedAt": "2026-02-15",
+    "retrievedAt": "2026-02-15",
+    "dataType": "curated_market",
+    "notes": "Median dari 25-65 sampel aktif listing hunian kamar kost AC & kamar mandi dalam per kota di platform sewa terbuka."
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "electricity": {
+    "provider": "PT PLN (Persero)",
+    "tariffs": [
+      { "category": "R-1/TR 900 VA (RTM)", "ratePerKwh": 1352, "monthlyAverageKostEst": 120000 },
+      { "category": "R-1/TR 1.300 VA", "ratePerKwh": 1444.70, "monthlyAverageKostEst": 220000 },
+      { "category": "R-1/TR 2.200 VA", "ratePerKwh": 1444.70, "monthlyAverageHouseholdEst": 450000 }
+    ],
+    "notes": "Tarif listrik non-subsidi berdasarkan penetapan resmi PLN 2024-2025."
+  },
+  "water": {
+    "provider": "PDAM Tirta / PAM Lokal",
+    "rates": [
+      { "city": "Jakarta", "avgMonthlySmallHousehold": 65000, "ratePerM3": 7200 },
+      { "city": "Surabaya", "avgMonthlySmallHousehold": 45000, "ratePerM3": 4500 },
+      { "city": "Bandung", "avgMonthlySmallHousehold": 50000, "ratePerM3": 5200 },
+      { "city": "Yogyakarta", "avgMonthlySmallHousehold": 40000, "ratePerM3": 4200 }
+    ]
+  },
+  "internet": {
+    "providers": [
+      { "brand": "IndiHome / Telkomsel One", "speedMbps": 30, "priceMonthly": 280000 },
+      { "brand": "Biznet Home", "speedMbps": 50, "priceMonthly": 250000 },
+      { "brand": "MyRepublic", "speedMbps": 30, "priceMonthly": 230000 },
+      { "brand": "First Media", "speedMbps": 30, "priceMonthly": 275000 },
+      { "brand": "Paket Data Seluler Bulanan (50GB - 80GB)", "speedMbps": null, "priceMonthly": 100000 }
+    ]
+  }
+}

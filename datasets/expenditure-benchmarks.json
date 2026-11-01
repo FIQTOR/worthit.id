@@ -1,0 +1,272 @@
+[
+  {
+    "cityId": "jakarta",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 2200000, "food": 1800000, "transportation": 500000, "utilities": 350000, "lifestyle": 450000, "financialObligations": 0, "other": 150000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi tipe kamar Kost AC/Privat dekat MRT/KRL, konsumsi campuran warteg & meal prep."
+  },
+  {
+    "cityId": "surabaya",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1300000, "food": 1200000, "transportation": 350000, "utilities": 250000, "lifestyle": 350000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost AC standar area Sukolilo/Wonokromo, motor pribadi & Trans Semanggi."
+  },
+  {
+    "cityId": "bandung",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1200000, "food": 1100000, "transportation": 300000, "utilities": 250000, "lifestyle": 350000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost standar AC/KM dalam area Coblong/Sukajadi."
+  },
+  {
+    "cityId": "yogyakarta",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 900000, "food": 950000, "transportation": 250000, "utilities": 200000, "lifestyle": 300000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost KM dalam area Sleman/Seturan, warung makan mahasiswa & Trans Jogja."
+  },
+  {
+    "cityId": "semarang",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 950000, "food": 1050000, "transportation": 280000, "utilities": 220000, "lifestyle": 300000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost standar Banyumanik/Tembalang, Trans Semarang & motor."
+  },
+  {
+    "cityId": "medan",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1100000, "food": 1250000, "transportation": 320000, "utilities": 240000, "lifestyle": 320000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost AC Medan Baru/Petisah, Trans Metro Deli & motor."
+  },
+  {
+    "cityId": "makassar",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1050000, "food": 1200000, "transportation": 300000, "utilities": 230000, "lifestyle": 320000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Tamalanrea/Panakkukang, Trans Mamminasata & motor."
+  },
+  {
+    "cityId": "denpasar",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1400000, "food": 1350000, "transportation": 350000, "utilities": 280000, "lifestyle": 400000, "financialObligations": 0, "other": 120000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost AC Renon/Panjer, motor & Trans Sarbagita."
+  },
+  {
+    "cityId": "malang",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 850000, "food": 950000, "transportation": 250000, "utilities": 200000, "lifestyle": 280000, "financialObligations": 0, "other": 90000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost KM dalam Lowokwaru/Dinoyo sekitar kampus Brawijaya/UM."
+  },
+  {
+    "cityId": "surakarta",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 800000, "food": 900000, "transportation": 220000, "utilities": 190000, "lifestyle": 260000, "financialObligations": 0, "other": 80000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Jebres/Laweyan dan transportasi BST (Batik Solo Trans)."
+  },
+  {
+    "cityId": "bogor",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1300000, "food": 1200000, "transportation": 350000, "utilities": 260000, "lifestyle": 320000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost sekitar Pajajaran/IPB Baranangsiang & KRL Commuter Line."
+  },
+  {
+    "cityId": "depok",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1400000, "food": 1250000, "transportation": 380000, "utilities": 270000, "lifestyle": 340000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Margonda/Kukusan dekat stasiun Pondok Cina/UI."
+  },
+  {
+    "cityId": "tangerang",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1350000, "food": 1200000, "transportation": 360000, "utilities": 260000, "lifestyle": 320000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Cikokol/Karawaci dan akses jalan tol/bus kota."
+  },
+  {
+    "cityId": "tangerang_selatan",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1600000, "food": 1350000, "transportation": 400000, "utilities": 300000, "lifestyle": 380000, "financialObligations": 0, "other": 120000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost AC area BSD/Bintaro/Pamulang dekat stasiun Rawa Buntu."
+  },
+  {
+    "cityId": "bekasi",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1350000, "food": 1250000, "transportation": 380000, "utilities": 270000, "lifestyle": 320000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Bekasi Barat/Pekayon dekat stasiun KRL & LRT."
+  },
+  {
+    "cityId": "batam",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1450000, "food": 1400000, "transportation": 350000, "utilities": 290000, "lifestyle": 380000, "financialObligations": 0, "other": 120000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Batam Center/Nagoya dengan biaya logistik kepulauan."
+  },
+  {
+    "cityId": "pekanbaru",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1100000, "food": 1200000, "transportation": 300000, "utilities": 240000, "lifestyle": 300000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Sukajadi/Tampan, Trans Metro Pekanbaru & motor."
+  },
+  {
+    "cityId": "palembang",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1050000, "food": 1150000, "transportation": 300000, "utilities": 230000, "lifestyle": 300000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Ilir Barat/Jakabaring dekat koridor LRT Palembang."
+  },
+  {
+    "cityId": "bandar_lampung",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 950000, "food": 1050000, "transportation": 280000, "utilities": 220000, "lifestyle": 280000, "financialObligations": 0, "other": 90000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Kedaton/Way Halim dekat kawasan universitas Unila."
+  },
+  {
+    "cityId": "padang",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 950000, "food": 1100000, "transportation": 270000, "utilities": 220000, "lifestyle": 280000, "financialObligations": 0, "other": 90000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Padang Barat/Kuranji dekat kampus Unand."
+  },
+  {
+    "cityId": "pontianak",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1000000, "food": 1150000, "transportation": 280000, "utilities": 230000, "lifestyle": 290000, "financialObligations": 0, "other": 90000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Pontianak Selatan/Untan dengan motor pribadi."
+  },
+  {
+    "cityId": "balikpapan",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1500000, "food": 1400000, "transportation": 380000, "utilities": 290000, "lifestyle": 380000, "financialObligations": 0, "other": 120000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Balikpapan Kota/Damai, pusat komersial gerbang IKN."
+  },
+  {
+    "cityId": "samarinda",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1150000, "food": 1250000, "transportation": 300000, "utilities": 250000, "lifestyle": 300000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Samarinda Ulu/Sungai Kunjang dekat kampus Unmul."
+  },
+  {
+    "cityId": "banjarmasin",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1000000, "food": 1150000, "transportation": 280000, "utilities": 230000, "lifestyle": 290000, "financialObligations": 0, "other": 90000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Banjarmasin Utara/Lambung Mangkurat."
+  },
+  {
+    "cityId": "manado",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1200000, "food": 1250000, "transportation": 300000, "utilities": 250000, "lifestyle": 320000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Malalayang/Kleak dekat kampus Unsrat."
+  },
+  {
+    "cityId": "mataram",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 950000, "food": 1050000, "transportation": 260000, "utilities": 210000, "lifestyle": 280000, "financialObligations": 0, "other": 90000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Mataram Kota/Ampenan dekat kampus Unram."
+  },
+  {
+    "cityId": "kupang",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 950000, "food": 1100000, "transportation": 270000, "utilities": 220000, "lifestyle": 270000, "financialObligations": 0, "other": 90000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Oebobo/Kelapa Lima dekat kampus Undana."
+  },
+  {
+    "cityId": "ambon",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1100000, "food": 1250000, "transportation": 290000, "utilities": 240000, "lifestyle": 300000, "financialObligations": 0, "other": 100000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Sirimau/Teluk Ambon dengan pengaruh biaya logistik laut."
+  },
+  {
+    "cityId": "jayapura",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 1650000, "food": 1650000, "transportation": 420000, "utilities": 320000, "lifestyle": 390000, "financialObligations": 0, "other": 150000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Abepura/Jayapura Utara dengan indeks harga bahan pokok Indonesia Timur."
+  },
+  {
+    "cityId": "cirebon",
+    "profile": "single",
+    "householdSize": 1,
+    "estimates": { "housing": 850000, "food": 950000, "transportation": 240000, "utilities": 200000, "lifestyle": 260000, "financialObligations": 0, "other": 80000 },
+    "isComplete": true,
+    "missingFields": [],
+    "notes": "Estimasi Kost Kesambi/Kejaksan dekat stasiun Cirebon & kuliner pantura."
+  }
+]

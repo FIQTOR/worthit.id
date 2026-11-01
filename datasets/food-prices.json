@@ -1,0 +1,35 @@
+[
+  {
+    "cityId": "jakarta",
+    "categories": [
+      { "item": "Makan Warteg Lengkap (Nasi + Ayam/Ikan + Sayur + Es Teh)", "rangeMin": 20000, "rangeMax": 35000, "median": 25000 },
+      { "item": "Makan Kafe / Restoran Casual", "rangeMin": 45000, "rangeMax": 95000, "median": 65000 },
+      { "item": "Kopi Susu Kekinian", "rangeMin": 18000, "rangeMax": 32000, "median": 24000 },
+      { "item": "Beras Premium per Kg", "rangeMin": 15000, "rangeMax": 18000, "median": 16500 },
+      { "item": "Telur Ayam Ras per Kg", "rangeMin": 28000, "rangeMax": 34000, "median": 31000 }
+    ],
+    "notes": "Harga mengacu pada survei pasar ritel tradisional & modern BPS DKI Jakarta 2025."
+  },
+  {
+    "cityId": "surabaya",
+    "categories": [
+      { "item": "Makan Warung / Depot (Nasi Bebek / Rawon / Penyetan)", "rangeMin": 16000, "rangeMax": 28000, "median": 22000 },
+      { "item": "Makan Kafe / Restoran Casual", "rangeMin": 35000, "rangeMax": 75000, "median": 50000 },
+      { "item": "Kopi Cangkir Warkop / Kafe", "rangeMin": 5000, "rangeMax": 25000, "median": 15000 },
+      { "item": "Beras Premium per Kg", "rangeMin": 14500, "rangeMax": 17000, "median": 15800 },
+      { "item": "Telur Ayam Ras per Kg", "rangeMin": 27000, "rangeMax": 32000, "median": 29500 }
+    ],
+    "notes": "Survei harga pasar Peneleh, Genteng, dan ritel Surabaya 2025."
+  },
+  {
+    "cityId": "yogyakarta",
+    "categories": [
+      { "item": "Makan Burjo / Warmindo / Nasi Rames", "rangeMin": 12000, "rangeMax": 22000, "median": 16000 },
+      { "item": "Makan Kafe / Restoran Casual", "rangeMin": 28000, "rangeMax": 60000, "median": 40000 },
+      { "item": "Kopi Susu / Angkringan", "rangeMin": 4000, "rangeMax": 22000, "median": 12000 },
+      { "item": "Beras Premium per Kg", "rangeMin": 14000, "rangeMax": 16500, "median": 15200 },
+      { "item": "Telur Ayam Ras per Kg", "rangeMin": 26000, "rangeMax": 31000, "median": 28500 }
+    ],
+    "notes": "Survei harga pasar Kranggan, Beringharjo, dan sekitar kampus Sleman 2025."
+  }
+]

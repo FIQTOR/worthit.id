@@ -1,0 +1,37 @@
+[
+  {
+    "cityId": "jakarta",
+    "modes": [
+      { "name": "TransJakarta Bus", "fareType": "flat", "price": 3500, "notes": "Tarif tetap Rp3.500 per perjalanan (Rp2.000 jam 05.00-07.00)" },
+      { "name": "MRT Jakarta", "fareType": "distance", "priceMin": 3000, "priceMax": 14000, "notes": "Lebak Bulus ke Bundaran HI" },
+      { "name": "LRT Jabodebek", "fareType": "distance", "priceMin": 5000, "priceMax": 20000, "notes": "Tarif integrasi Jabodebek" },
+      { "name": "KRL Commuter Line", "fareType": "distance", "priceMin": 3000, "priceMax": 6000, "notes": "Lintas Jabodetabek" },
+      { "name": "Bensin Pertalite per Liter", "fareType": "official_regulated", "price": 10000, "notes": "Tarif Pertamina resmi nasional" },
+      { "name": "Bensin Pertamax per Liter", "fareType": "official_market", "price": 12950, "notes": "Fluktuatif berkala" }
+    ]
+  },
+  {
+    "cityId": "surabaya",
+    "modes": [
+      { "name": "Trans Semanggi Suroboyo / Suroboyo Bus", "fareType": "flat", "price": 5000, "notes": "Integrasi pembayaran digital QRIS/kartu uang elektronik" },
+      { "name": "Komuter Surabaya - Sidoarjo", "fareType": "flat", "price": 4000, "notes": "KAI Commuter" },
+      { "name": "Bensin Pertalite per Liter", "fareType": "official_regulated", "price": 10000, "notes": "Tarif Pertamina resmi nasional" }
+    ]
+  },
+  {
+    "cityId": "bandung",
+    "modes": [
+      { "name": "Trans Metro Bandung / TMP", "fareType": "flat", "price": 4900, "notes": "Teman Bus Bandung Raya" },
+      { "name": "KRD Lokal Bandung Raya", "fareType": "flat", "price": 5000, "notes": "Padalarang - Cicalengka" },
+      { "name": "Bensin Pertalite per Liter", "fareType": "official_regulated", "price": 10000, "notes": "Tarif resmi nasional" }
+    ]
+  },
+  {
+    "cityId": "yogyakarta",
+    "modes": [
+      { "name": "Trans Jogja", "fareType": "flat", "price": 3600, "notes": "Tarif kartu reguler / Rp2.700 tarif pelajar" },
+      { "name": "KRL Commuter Jogja-Solo", "fareType": "flat", "price": 8000, "notes": "Yogyakarta ke Solo Balapan" },
+      { "name": "Bensin Pertalite per Liter", "fareType": "official_regulated", "price": 10000, "notes": "Tarif resmi nasional" }
+    ]
+  }
+]
