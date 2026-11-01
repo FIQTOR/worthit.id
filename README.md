@@ -106,19 +106,17 @@ npm run typecheck
 npm run build
 ```
 
-## Deployment (Vercel)
+## Deployment (Cloudflare Pages)
 
-Aplikasi dikonfigurasi untuk deploy di Vercel Hobby (non-commercial use).
+Aplikasi ini adalah Single Page Application (SPA) murni tanpa ketergantungan server runtime.
 
-```bash
-# Install Vercel CLI
-npm i -g vercel
+### Konfigurasi Cloudflare Pages:
+- **Framework preset:** `Vite` (atau `None`)
+- **Build command:** `npm run build`
+- **Build output directory:** `apps/web/dist`
+- **Root directory:** `/`
 
-# Deploy
-vercel
-```
-
-**Catatan:** Vercel Hobby plan hanya untuk penggunaan personal non-komersial.
+Redirects rule untuk routing SPA sudah disediakan otomatis di `apps/web/public/_redirects` (`/*  /index.html  200`).
 
 ## Metodologi Perhitungan
 
