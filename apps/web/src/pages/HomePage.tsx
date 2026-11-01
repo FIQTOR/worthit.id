@@ -1,9 +1,11 @@
+import { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiService } from '@/services/api.service';
 import { useCalculatorStore } from '@/stores/calculator.store';
 import { calculateSimulation, formatRupiah, City } from '@worthit/shared';
+import { gsap } from '@/utils/gsapAnimations';
 import {
   LandingHero,
   LandingMarquee,
@@ -19,6 +21,7 @@ import {
 
 export function HomePage() {
   const navigate = useNavigate();
+  const pageContainerRef = useRef<HTMLDivElement | null>(null);
   const { setIncome, setCityId, setProfile, setHouseholdSize } = useCalculatorStore();
 
   const [cities, setCities] = useState<City[]>([]);
@@ -36,6 +39,37 @@ export function HomePage() {
       })
       .catch(() => {});
   }, []);
+
+  // Global GSAP section entrance animations on scroll
+  useEffect(() => {
+    if (!pageContainerRef.current) return;
+    const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (isReduced) return;
+
+    const ctx = gsap.context(() => {
+      // Stagger card appearances on scroll
+      const cardSelectors = ['.card', '.rk', '.apple-card'];
+      cardSelectors.forEach((selector) => {
+        const elements = pageContainerRef.current?.querySelectorAll(selector);
+        if (elements && elements.length > 0) {
+          gsap.from(elements, {
+            y: 40,
+            opacity: 0,
+            duration: 0.75,
+            stagger: 0.08,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: elements[0],
+              start: 'top 92%'
+            },
+            clearProps: 'transform,opacity'
+          });
+        }
+      });
+    }, pageContainerRef);
+
+    return () => ctx.revert();
+  }, [cities]);
 
   const selectedCity = cities.find((c) => c.id === quickCityId) || cities[0];
 
@@ -143,11 +177,11 @@ export function HomePage() {
         />
       </Helmet>
 
-      <div className="max-w-[1080px] mx-auto px-5 pt-8 pb-16 relative">
+      <div ref={pageContainerRef} className="max-w-[1080px] mx-auto px-5 pt-8 pb-16 relative">
         {/* Floating 3D Geometric Decorators */}
         <LandingDeco />
 
-        {/* 1. HERO SECTION WITH DOT MAP */}
+        {/* 1. HERO SECTION WITH GSAP 3D FLIP & DOT MAP */}
         <LandingHero
           sliderIncome={sliderIncome}
           setSliderIncome={setSliderIncome}
@@ -159,10 +193,10 @@ export function HomePage() {
           getStatusColor={getStatusColor}
         />
 
-        {/* 2. STATS & MARQUEE TICKER */}
+        {/* 2. STATS WITH GSAP COUNT-UP & MARQUEE TICKER */}
         <LandingMarquee cities={cities} />
 
-        {/* 3. STATEMENT CALLOUT */}
+        {/* 3. STATEMENT CALLOUT WITH GSAP SCROLL SCRUB */}
         <LandingStatement />
 
         {/* 4. CASHFLOW ALLOCATION BAR */}

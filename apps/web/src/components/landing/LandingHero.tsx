@@ -1,6 +1,8 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { City, SimulationResult, formatRupiah } from '@worthit/shared';
 import { LandingDotMap } from './LandingDotMap';
+import { gsap, splitTextIntoSpans } from '@/utils/gsapAnimations';
 
 interface LandingHeroProps {
   sliderIncome: number;
@@ -23,6 +25,91 @@ export function LandingHero({
   quickSimulation,
   getStatusColor
 }: LandingHeroProps) {
+  const h1Ref = useRef<HTMLHeadingElement | null>(null);
+  const pillRef = useRef<HTMLSpanElement | null>(null);
+  const subRef = useRef<HTMLParagraphElement | null>(null);
+  const btnsRef = useRef<HTMLDivElement | null>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
+
+  // GSAP 3D character flip on Hero title & entrance sequence
+  useEffect(() => {
+    if (!h1Ref.current) return;
+    const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (isReduced) return;
+
+    const chars = splitTextIntoSpans(h1Ref.current);
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+
+      tl.from(pillRef.current, { y: 20, opacity: 0, duration: 0.7 })
+        .from(
+          chars,
+          {
+            yPercent: 120,
+            rotateX: -80,
+            opacity: 0,
+            transformOrigin: '0 100% -20px',
+            duration: 1,
+            stagger: 0.018
+          },
+          '-=0.4'
+        )
+        .from(subRef.current, { y: 24, opacity: 0, duration: 0.8 }, '-=0.6')
+        .from(
+          btnsRef.current ? btnsRef.current.querySelectorAll('.btn') : [],
+          { y: 20, opacity: 0, scale: 0.9, duration: 0.6, stagger: 0.1 },
+          '-=0.5'
+        )
+        .from(cardRef.current, { y: 60, opacity: 0, duration: 1 }, '-=1.1')
+        .from(
+          cardRef.current ? cardRef.current.querySelectorAll('.fl') : [],
+          { scale: 0, opacity: 0, duration: 0.6, ease: 'back.out(2)', stagger: 0.15 },
+          '-=0.3'
+        );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+  // Magnetic button cursor feel
+  useEffect(() => {
+    if (!btnsRef.current) return;
+    const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (isReduced) return;
+
+    const buttons = btnsRef.current.querySelectorAll<HTMLElement>('.btn');
+    const cleanups: (() => void)[] = [];
+
+    buttons.forEach((b) => {
+      const xTo = gsap.quickTo(b, 'x', { duration: 0.4, ease: 'power3' });
+      const yTo = gsap.quickTo(b, 'y', { duration: 0.4, ease: 'power3' });
+
+      const onMouseMove = (e: MouseEvent) => {
+        const r = b.getBoundingClientRect();
+        xTo((e.clientX - r.left - r.width / 2) * 0.25);
+        yTo((e.clientY - r.top - r.height / 2) * 0.35);
+      };
+
+      const onMouseLeave = () => {
+        xTo(0);
+        yTo(0);
+      };
+
+      b.addEventListener('mousemove', onMouseMove);
+      b.addEventListener('mouseleave', onMouseLeave);
+
+      cleanups.push(() => {
+        b.removeEventListener('mousemove', onMouseMove);
+        b.removeEventListener('mouseleave', onMouseLeave);
+      });
+    });
+
+    return () => {
+      cleanups.forEach((c) => c());
+    };
+  }, []);
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-10 items-center pt-4 relative">
       {/* Background Dot Map Animation */}
@@ -30,20 +117,20 @@ export function LandingHero({
 
       {/* Left Column: Headline & Action Buttons */}
       <div className="relative z-10">
-        <span className="pill">
+        <span ref={pillRef} className="pill">
           Gratis · Tanpa akun · Tanpa AI spekulatif
         </span>
 
-        <h1 className="h1">
+        <h1 ref={h1Ref} className="h1">
           Gaji kamu cukup untuk hidup di{' '}
           <span className="text-[var(--ac)]">kota mana?</span>
         </h1>
 
-        <p className="sub">
+        <p ref={subRef} className="sub">
           Hitung biaya hidup, bandingkan kota, lihat sisa tabungan tiap bulan secara transparan.
         </p>
 
-        <div className="flex gap-3 flex-wrap">
+        <div ref={btnsRef} className="flex gap-3 flex-wrap">
           <Link to="/calculator" className="btn">
             Mulai Simulasi
             <svg
@@ -69,13 +156,18 @@ export function LandingHero({
       </div>
 
       {/* Right Column: Quick Interactive Card */}
-      <div className="card relative z-10 shadow-lg" id="kalkulator">
+      <div ref={cardRef} className="card relative z-10 shadow-lg" id="kalkulator">
         <span className="fl" style={{ top: '-16px', right: '-8px' }}>
           {selectedCity?.name || 'Jakarta'}
         </span>
         <span
           className="fl hidden sm:block"
-          style={{ bottom: '56px', left: '-22px', animationDelay: '-2s', color: getStatusColor(quickSimulation.status) }}
+          style={{
+            bottom: '56px',
+            left: '-22px',
+            animationDelay: '-2s',
+            color: getStatusColor(quickSimulation.status)
+          }}
         >
           ● {quickSimulation.statusInfo.label}
         </span>
@@ -139,9 +231,11 @@ export function LandingHero({
             ● {quickSimulation.statusInfo.label}
           </span>
           <p className="text-[var(--mu)] text-[15px] mt-2">
-            Sisa <b style={{ color: quickSimulation.remainingIncome < 0 ? 'var(--r)' : 'var(--tx)' }}>
+            Sisa{' '}
+            <b style={{ color: quickSimulation.remainingIncome < 0 ? 'var(--r)' : 'var(--tx)' }}>
               {formatRupiah(quickSimulation.remainingIncome)}
-            </b> per bulan
+            </b>{' '}
+            per bulan
           </p>
         </div>
       </div>

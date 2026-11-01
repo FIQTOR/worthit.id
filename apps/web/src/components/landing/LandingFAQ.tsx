@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { gsap, splitTextIntoSpans } from '@/utils/gsapAnimations';
 
 interface FAQItem {
   q: string;
@@ -25,10 +27,40 @@ const FAQS: FAQItem[] = [
 ];
 
 export function LandingFAQ() {
+  const ctaRef = useRef<HTMLDivElement | null>(null);
+  const ctaTitleRef = useRef<HTMLHeadingElement | null>(null);
+
+  useEffect(() => {
+    if (!ctaRef.current) return;
+    const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (isReduced) return;
+
+    if (ctaTitleRef.current) {
+      splitTextIntoSpans(ctaTitleRef.current);
+    }
+
+    const ctx = gsap.context(() => {
+      // Parallax scale & border radius transition on CTA
+      gsap.from(ctaRef.current, {
+        scale: 0.92,
+        borderRadius: 80,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: ctaRef.current,
+          start: 'top 100%',
+          end: 'top 55%',
+          scrub: true
+        }
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       {/* TIGA LANGKAH */}
-      <section className="mt-14">
+      <section className="mt-16">
         <h2 className="apple-h2">Tiga langkah mudah</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
           {[
@@ -51,7 +83,7 @@ export function LandingFAQ() {
               color: 'var(--ok)'
             }
           ].map((step) => (
-            <div key={step.num} className="apple-card border border-[var(--bd)]">
+            <div key={step.num} className="card border border-[var(--bd)]">
               <div
                 className="w-11 h-11 rounded-[11px] grid place-items-center text-white mb-3 text-lg font-bold shadow-sm"
                 style={{ background: step.color }}
@@ -66,9 +98,9 @@ export function LandingFAQ() {
       </section>
 
       {/* FAQ ACCORDION */}
-      <section className="mt-14">
+      <section className="mt-16" id="faq">
         <h2 className="apple-h2">Pertanyaan umum</h2>
-        <div className="apple-card divide-y divide-[var(--bd)] border border-[var(--bd)]">
+        <div className="card divide-y divide-[var(--bd)] border border-[var(--bd)]">
           {FAQS.map((faq, idx) => (
             <details key={idx} className="py-3.5 group cursor-pointer">
               <summary className="font-semibold flex justify-between items-center list-none select-none text-[var(--tx)]">
@@ -90,12 +122,15 @@ export function LandingFAQ() {
       </section>
 
       {/* BOTTOM CTA BANNER */}
-      <section className="mt-14">
-        <div className="rounded-3xl bg-[var(--ac)] text-white text-center py-12 px-6 shadow-xl relative overflow-hidden">
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3 text-white">
+      <section className="mt-16">
+        <div
+          ref={ctaRef}
+          className="cta-banner shadow-xl"
+        >
+          <h2 ref={ctaTitleRef}>
             Cek gajimu sekarang
           </h2>
-          <p className="text-white/90 text-sm sm:text-base max-w-md mx-auto mb-7 leading-relaxed">
+          <p>
             Hanya butuh 1 menit untuk mengetahui kesehatan finansialmu di kota tujuan.
           </p>
           <div className="flex justify-center">
