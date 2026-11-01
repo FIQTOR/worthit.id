@@ -93,7 +93,7 @@ export function JobOfferPage() {
   return (
     <>
       <Helmet>
-        <title>Simulator Tawaran Kerja (Job Offer) – WorthIt Indonesia</title>
+        <title>Simulator Tawaran Kerja (Job Offer) | WorthIt Indonesia</title>
         <meta
           name="description"
           content="Bandingkan penawaran gaji baru dan lonjakan biaya hidup di kota tujuan untuk mendeteksi phantom raise sebelum menerima offer kerja."
@@ -110,7 +110,7 @@ export function JobOfferPage() {
           Apakah Tawaran Pindah Kota Layak Diambil?
         </h1>
         <p className="text-sm sm:text-base text-[var(--mu)]">
-          Hindari <em>Phantom Raise</em> — kenaikan nominal gaji yang ternyata habis termakan biaya hidup dan sewa tempat tinggal di kota tujuan.
+          Hindari <em>Phantom Raise</em>, yaitu kenaikan nominal gaji yang ternyata habis termakan biaya hidup dan sewa tempat tinggal di kota tujuan.
         </p>
       </div>
 

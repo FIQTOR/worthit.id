@@ -4,7 +4,7 @@ export function MethodologyPage() {
   return (
     <>
       <Helmet>
-        <title>Metodologi Data – WorthIt Indonesia</title>
+        <title>Metodologi Data | WorthIt Indonesia</title>
         <meta
           name="description"
           content="Prinsip transparansi, rumus finansial, dan sumber data resmi yang digunakan di WorthIt Indonesia."
@@ -81,8 +81,8 @@ export function MethodologyPage() {
               {[
                 { label: 'Defisit', color: 'var(--r)', desc: 'Pengeluaran melebihi pemasukan bulanan.' },
                 { label: 'Sangat Terbatas', color: 'var(--w)', desc: 'Tingkat tabungan di bawah 10% pendapatan.' },
-                { label: 'Cukup Ketat', color: 'var(--ac)', desc: 'Tingkat tabungan antara 10% – 19%.' },
-                { label: 'Cukup Sehat', color: 'var(--ok)', desc: 'Tingkat tabungan antara 20% – 29%.' },
+                { label: 'Cukup Ketat', color: 'var(--ac)', desc: 'Tingkat tabungan antara 10% sampai 19%.' },
+                { label: 'Cukup Sehat', color: 'var(--ok)', desc: 'Tingkat tabungan antara 20% sampai 29%.' },
                 { label: 'Ruang Menabung Besar', color: 'var(--ok)', desc: 'Tingkat tabungan 30% atau lebih.' }
               ].map((st, idx) => (
                 <div key={idx} className="py-3 flex justify-between items-center gap-4">

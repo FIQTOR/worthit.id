@@ -13,37 +13,37 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="block text-sm font-medium text-text-primary mb-2">
+          <label className="block text-sm font-medium text-[var(--tx)] mb-2">
             {label}
           </label>
         )}
         <div className="relative">
           {prefix && (
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--mu)]">
               {prefix}
             </span>
           )}
           <input
             ref={ref}
             className={cn(
-              'w-full px-4 py-3 bg-surface border border-border rounded-xl text-text-primary placeholder:text-text-secondary',
-              'focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent',
+              'w-full px-4 py-3 bg-[var(--f)] border border-[var(--bd)] rounded-xl text-[var(--tx)] placeholder:text-[var(--mu)]',
+              'focus:outline-none focus:ring-2 focus:ring-[var(--ac)] focus:border-transparent',
               'transition-smooth',
               prefix && 'pl-10',
               suffix && 'pr-10',
-              error && 'border-danger focus:ring-danger',
+              error && 'border-[var(--r)] focus:ring-[var(--r)]',
               className
             )}
             {...props}
           />
           {suffix && (
-            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-text-secondary">
+            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--mu)]">
               {suffix}
             </span>
           )}
         </div>
         {error && (
-          <p className="mt-2 text-sm text-danger">{error}</p>
+          <p className="mt-2 text-sm text-[var(--r)]">{error}</p>
         )}
       </div>
     );

@@ -122,7 +122,7 @@ export function HomePage() {
   return (
     <>
       <Helmet>
-        <title>WorthIt Indonesia – Gaji Kamu Cukup untuk Hidup di Kota Mana?</title>
+        <title>WorthIt Indonesia: Gaji Kamu Cukup untuk Hidup di Kota Mana?</title>
         <meta
           name="description"
           content="Simulasikan biaya hidup, bandingkan kota, dan cari tahu berapa yang bisa kamu tabung setiap bulan."

@@ -96,7 +96,7 @@ export function ReverseCalculatorPage() {
   return (
     <>
       <Helmet>
-        <title>Target Gaji & Negosiasi Offer – WorthIt Indonesia</title>
+        <title>Target Gaji dan Negosiasi Offer | WorthIt Indonesia</title>
         <meta
           name="description"
           content="Hitung target penawaran gaji kotor (gross) dan take home pay bersih berdasarkan target tabungan dan biaya hidup kota tujuan."
@@ -344,7 +344,7 @@ export function ReverseCalculatorPage() {
                   <span className="text-xs font-normal text-neutral-400">/bln</span>
                 </div>
                 <div className="text-xs text-neutral-400 mt-1">
-                  Untuk menghasilkan Take-Home Pay bersih {formatRupiah(result.requiredNetSalary)}/bulan.
+                  Untuk menghasilkan Take Home Pay bersih {formatRupiah(result.requiredNetSalary)}/bulan.
                 </div>
               </div>
             ) : (

@@ -37,7 +37,7 @@ export function CitiesPage() {
   return (
     <>
       <Helmet>
-        <title>Daftar Kota – WorthIt Indonesia</title>
+        <title>Daftar Kota | WorthIt Indonesia</title>
         <meta
           name="description"
           content="Jelajahi biaya hidup 30 kota di Indonesia dari Sabang sampai Merauke."

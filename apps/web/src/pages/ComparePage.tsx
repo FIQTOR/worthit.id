@@ -59,7 +59,7 @@ export function ComparePage() {
   return (
     <>
       <Helmet>
-        <title>Bandingkan Kota – WorthIt Indonesia</title>
+        <title>Bandingkan Kota | WorthIt Indonesia</title>
         <meta
           name="description"
           content="Gaji dan gaya hidup sama, kota berbeda. Mana yang paling menyisakan uang tabungan?"
@@ -117,7 +117,7 @@ export function ComparePage() {
                   }}
                   className="apple-select"
                 >
-                  {idx === 2 && <option value="">— Opsional —</option>}
+                  {idx === 2 && <option value="">Pilihan Opsional</option>}
                   {cities.map((c) => (
                     <option key={c.id} value={c.id}>{c.name}</option>
                   ))}

@@ -53,7 +53,7 @@ export function CityDetailPage() {
   return (
     <>
       <Helmet>
-        <title>{city.name} – Biaya Hidup – WorthIt Indonesia</title>
+        <title>{city.name} | Biaya Hidup | WorthIt Indonesia</title>
         <meta
           name="description"
           content={`Estimasi biaya hidup bulanan, benchmark resmi BPS, dan sampel sewa kost di ${city.name}, ${city.province}.`}
@@ -208,7 +208,7 @@ export function CityDetailPage() {
                         </b>
                         {r.monthlyPriceMin && r.monthlyPriceMax && (
                           <p className="text-xs text-[var(--mu)]">
-                            {formatRupiah(r.monthlyPriceMin)} – {formatRupiah(r.monthlyPriceMax)}
+                            {formatRupiah(r.monthlyPriceMin)} sampai {formatRupiah(r.monthlyPriceMax)}
                           </p>
                         )}
                       </div>

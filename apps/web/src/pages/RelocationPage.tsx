@@ -36,7 +36,7 @@ export function RelocationPage() {
   return (
     <>
       <Helmet>
-        <title>Modal Relokasi – WorthIt Indonesia</title>
+        <title>Modal Relokasi | WorthIt Indonesia</title>
         <meta
           name="description"
           content="Berapa modal awal yang aman sebelum merantau ke kota baru di Indonesia?"
@@ -208,7 +208,7 @@ export function RelocationPage() {
             </div>
 
             <p className="text-[var(--mu)] text-xs mt-6 leading-relaxed bg-[var(--f)] p-3 rounded-xl">
-              ⚠️ <b>Tips:</b> Jangan pindah tanpa dana darurat minimal 1–3 bulan pengeluaran untuk mengantisipasi keterlambatan gaji awal atau penyesuaian biaya adaptasi.
+              ⚠️ <b>Tips:</b> Jangan pindah tanpa dana darurat minimal 1 sampai 3 bulan pengeluaran untuk mengantisipasi keterlambatan gaji awal atau penyesuaian biaya adaptasi.
             </p>
           </aside>
         </div>

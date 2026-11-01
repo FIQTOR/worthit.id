@@ -67,7 +67,7 @@ export function ResultPage() {
   return (
     <>
       <Helmet>
-        <title>Hasil Simulasi – WorthIt Indonesia</title>
+        <title>Hasil Simulasi | WorthIt Indonesia</title>
         <meta name="description" content="Hasil evaluasi kelayakan finansial dan potensi tabungan bulananmu." />
       </Helmet>
 

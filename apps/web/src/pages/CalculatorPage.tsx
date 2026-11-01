@@ -155,7 +155,7 @@ export function CalculatorPage() {
   return (
     <>
       <Helmet>
-        <title>Kalkulator Biaya Hidup – WorthIt Indonesia</title>
+        <title>Kalkulator Biaya Hidup | WorthIt Indonesia</title>
         <meta
           name="description"
           content="Simulasikan dan sesuaikan seluruh komponen pengeluaran bulananmu di kota tujuan."

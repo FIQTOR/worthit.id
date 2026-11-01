@@ -12,10 +12,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = 'inline-flex items-center justify-center font-medium rounded-xl transition-smooth focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
     
     const variants = {
-      primary: 'bg-accent text-white hover:bg-blue-600 active:bg-blue-700',
-      secondary: 'bg-surface text-text-primary border border-border hover:bg-gray-50',
-      outline: 'border-2 border-accent text-accent hover:bg-accent/5',
-      ghost: 'text-accent hover:bg-accent/5'
+      primary: 'bg-[var(--ac)] text-white hover:opacity-90 active:scale-95',
+      secondary: 'bg-[var(--f)] text-[var(--tx)] border border-[var(--bd)] hover:opacity-85',
+      outline: 'border-2 border-[var(--ac)] text-[var(--ac)] hover:bg-[var(--f)]',
+      ghost: 'text-[var(--ac)] hover:bg-[var(--f)]'
     };
 
     const sizes = {
