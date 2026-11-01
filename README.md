@@ -113,10 +113,10 @@ Aplikasi ini adalah Single Page Application (SPA) murni tanpa ketergantungan ser
 ### Konfigurasi Cloudflare Pages:
 - **Framework preset:** `Vite` (atau `None`)
 - **Build command:** `npm run build`
-- **Build output directory:** `apps/web/dist`
+- **Build output directory:** `dist`
 - **Root directory:** `/`
 
-Redirects rule untuk routing SPA sudah disediakan otomatis di `apps/web/public/_redirects` (`/*  /index.html  200`).
+Redirects rule untuk routing SPA sudah otomatis disertakan ke folder build via `_redirects` (`/*  /index.html  200`).
 
 ## Metodologi Perhitungan
 
