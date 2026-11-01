@@ -263,3 +263,26 @@ export interface JobOfferComparisonResult {
   recommendationDetail: string;
 }
 
+export type LifestyleTier = 'frugal' | 'standard' | 'comfortable';
+
+export interface EmergencyRunwayInput {
+  savingsBalance: number;
+  cityId: string;
+  monthlyExpenses: number;
+  expectedMonthlyIncome?: number;
+}
+
+export interface EmergencyRunwayResult {
+  savingsBalance: number;
+  cityId: string;
+  monthlyExpenses: number;
+  expectedMonthlyIncome: number;
+  netBurnRate: number;
+  runwayMonths: number;
+  runwayDays: number;
+  safetyTier: 'danger' | 'warning' | 'moderate' | 'safe' | 'bulletproof';
+  safetyLabel: string;
+  advice: string;
+}
+
+

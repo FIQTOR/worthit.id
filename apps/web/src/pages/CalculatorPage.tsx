@@ -8,10 +8,12 @@ import {
   formatRupiah,
   calculateSimulation,
   calculateTaxAndDeductions,
+  adjustExpensesByLifestyle,
   EXPENSE_CATEGORY_LABELS,
   ExpenseEstimates,
   CommuteMode,
-  PTKPStatus
+  PTKPStatus,
+  LifestyleTier
 } from '@worthit/shared';
 import { IndonesiaMap } from '@/components/calculator/IndonesiaMap';
 import rentalData from '../../../../datasets/rental-prices.json';
@@ -51,6 +53,9 @@ export function CalculatorPage() {
 
   // Commute mode quick-apply
   const [selectedCommute, setSelectedCommute] = useState<CommuteMode>('motorcycle');
+  // Lifestyle tier quick-preset (frugal, standard, comfortable)
+  const [activeLifestyle, setActiveLifestyle] = useState<LifestyleTier>('standard');
+  const [baseCityEstimates, setBaseCityEstimates] = useState<ExpenseEstimates | null>(null);
 
   // Pre-select city and income from URL query
   useEffect(() => {
@@ -76,7 +81,9 @@ export function CalculatorPage() {
     if (!cityId) return;
     apiService.getCityExpenses(cityId, profile, householdSize).then((res) => {
       if (res.data?.reference?.estimates) {
-        setExpenses(res.data.reference.estimates);
+        setBaseCityEstimates(res.data.reference.estimates);
+        const adjusted = adjustExpensesByLifestyle(res.data.reference.estimates, activeLifestyle);
+        setExpenses(adjusted);
       }
     }).catch(() => {});
   }, [cityId, profile, householdSize, setExpenses]);
@@ -136,6 +143,14 @@ export function CalculatorPage() {
   const applyCommutePreset = (mode: CommuteMode, cost: number) => {
     setSelectedCommute(mode);
     setExpenses({ transportation: cost });
+  };
+
+  const handleLifestyleChange = (tier: LifestyleTier) => {
+    setActiveLifestyle(tier);
+    if (baseCityEstimates) {
+      const adjusted = adjustExpensesByLifestyle(baseCityEstimates, tier);
+      setExpenses(adjusted);
+    }
   };
 
   const filteredCities = cities.filter((c) =>
@@ -339,6 +354,34 @@ export function CalculatorPage() {
               <div className="flex justify-between items-center mb-2">
                 <h3 className="apple-h3 !mb-0">2. Estimasi Pengeluaran Bulanan</h3>
                 <span className="text-xs text-[var(--mu)]">Semua bisa diedit</span>
+              </div>
+
+              {/* LIFESTYLE TIER SELECTOR */}
+              <div className="p-3.5 bg-[var(--f)] rounded-2xl mb-4 border border-[var(--bd)]">
+                <span className="text-[11px] font-bold text-[var(--mu)] uppercase tracking-wider block mb-2">
+                  Profil Standar Gaya Hidup di {selectedCityObj?.name}:
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  {[
+                    { id: 'frugal', label: 'Hemat / Survival', desc: 'Kost reguler, makan warteg, minim nongkrong' },
+                    { id: 'standard', label: 'Menengah / Seimbang', desc: 'Kost AC privat, makan seimbang, hiburan wajar' },
+                    { id: 'comfortable', label: 'Nyaman / Prioritas', desc: 'Apartemen/Studio, kuliner leluasa, gaya hidup aktif' }
+                  ].map((tier) => (
+                    <button
+                      key={tier.id}
+                      type="button"
+                      onClick={() => handleLifestyleChange(tier.id as LifestyleTier)}
+                      className={`text-left p-2.5 rounded-xl border text-xs transition ${
+                        activeLifestyle === tier.id
+                          ? 'border-[var(--ac)] bg-[var(--c)] text-[var(--ac)] font-semibold shadow-sm'
+                          : 'border-[var(--bd)] bg-[var(--c)] text-[var(--tx)] hover:opacity-85'
+                      }`}
+                    >
+                      <div className="font-semibold">{tier.label}</div>
+                      <div className="text-[10px] text-[var(--mu)] mt-0.5">{tier.desc}</div>
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* RENTAL PRESETS DARI DATABASE REAL */}

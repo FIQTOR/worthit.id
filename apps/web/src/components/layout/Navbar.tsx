@@ -10,6 +10,7 @@ export function Navbar() {
   const navLinks = [
     { to: '/', label: 'Beranda' },
     { to: '/calculator', label: 'Kalkulator' },
+    { to: '/runway', label: 'Dana Darurat' },
     { to: '/reverse-calculator', label: 'Target Gaji' },
     { to: '/job-offer', label: 'Tawaran Kerja' },
     { to: '/compare', label: 'Bandingkan' },

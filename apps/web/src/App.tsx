@@ -12,6 +12,7 @@ import { CityDetailPage } from './pages/CityDetailPage';
 import { MethodologyPage } from './pages/MethodologyPage';
 import { ReverseCalculatorPage } from './pages/ReverseCalculatorPage';
 import { JobOfferPage } from './pages/JobOfferPage';
+import { EmergencyRunwayPage } from './pages/EmergencyRunwayPage';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/calculator" element={<CalculatorPage />} />
+              <Route path="/runway" element={<EmergencyRunwayPage />} />
+              <Route path="/dana-darurat" element={<EmergencyRunwayPage />} />
               <Route path="/reverse-calculator" element={<ReverseCalculatorPage />} />
               <Route path="/target-gaji" element={<ReverseCalculatorPage />} />
               <Route path="/job-offer" element={<JobOfferPage />} />

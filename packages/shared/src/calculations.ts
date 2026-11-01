@@ -11,7 +11,10 @@ import {
   ReverseSalaryInput,
   ReverseSalaryResult,
   JobOfferComparisonInput,
-  JobOfferComparisonResult
+  JobOfferComparisonResult,
+  EmergencyRunwayInput,
+  EmergencyRunwayResult,
+  LifestyleTier
 } from './types.js';
 
 export const EXPENSE_CATEGORY_LABELS: Record<keyof ExpenseEstimates, string> = {
@@ -445,4 +448,95 @@ export function calculateJobOfferComparison(
     recommendationDetail
   };
 }
+
+export function adjustExpensesByLifestyle(
+  baseExpenses: ExpenseEstimates,
+  tier: LifestyleTier
+): ExpenseEstimates {
+  if (tier === 'frugal') {
+    return {
+      housing: Math.round(baseExpenses.housing * 0.7),
+      food: Math.round(baseExpenses.food * 0.75),
+      transportation: Math.round(baseExpenses.transportation * 0.7),
+      utilities: Math.round(baseExpenses.utilities * 0.8),
+      lifestyle: Math.round(baseExpenses.lifestyle * 0.4),
+      financialObligations: baseExpenses.financialObligations,
+      other: Math.round(baseExpenses.other * 0.5)
+    };
+  } else if (tier === 'comfortable') {
+    return {
+      housing: Math.round(baseExpenses.housing * 1.6),
+      food: Math.round(baseExpenses.food * 1.4),
+      transportation: Math.round(baseExpenses.transportation * 1.5),
+      utilities: Math.round(baseExpenses.utilities * 1.3),
+      lifestyle: Math.round(baseExpenses.lifestyle * 1.8),
+      financialObligations: baseExpenses.financialObligations,
+      other: Math.round(baseExpenses.other * 1.4)
+    };
+  }
+  return { ...baseExpenses };
+}
+
+export function calculateEmergencyRunway(
+  input: EmergencyRunwayInput
+): EmergencyRunwayResult {
+  const savings = Math.max(0, Math.round(input.savingsBalance || 0));
+  const expenses = Math.max(0, Math.round(input.monthlyExpenses || 0));
+  const income = Math.max(0, Math.round(input.expectedMonthlyIncome || 0));
+
+  const netBurnRate = Math.max(0, expenses - income);
+
+  let runwayMonths = 0;
+  if (netBurnRate === 0) {
+    runwayMonths = expenses === 0 ? 999 : 999;
+  } else {
+    runwayMonths = Math.round((savings / netBurnRate) * 10) / 10;
+  }
+
+  const runwayDays = Math.round(runwayMonths * 30);
+
+  let safetyTier: EmergencyRunwayResult['safetyTier'] = 'danger';
+  let safetyLabel = '';
+  let advice = '';
+
+  if (netBurnRate === 0 && income >= expenses && expenses > 0) {
+    safetyTier = 'bulletproof';
+    safetyLabel = 'Mandiri Berkelanjutan (Cash Flow Positif)';
+    advice = 'Pemasukan pasif atau sampingan Anda sudah menutup seluruh pengeluaran bulanan. Tabungan darurat Anda tetap utuh.';
+  } else if (runwayMonths >= 12) {
+    safetyTier = 'bulletproof';
+    safetyLabel = 'Sangat Aman (12+ Bulan)';
+    advice = 'Cadangan dana darurat Anda sangat kuat. Anda memiliki kebebasan penuh dalam mencari peluang karir terbaik tanpa tekanan finansial.';
+  } else if (runwayMonths >= 6) {
+    safetyTier = 'safe';
+    safetyLabel = 'Aman (6 sampai 12 Bulan)';
+    advice = 'Sesuai standar ideal perencana keuangan. Memberi ruang tenang untuk transisi karir, mencari pekerjaan baru, atau pemulihan darurat.';
+  } else if (runwayMonths >= 3) {
+    safetyTier = 'moderate';
+    safetyLabel = 'Cukup / Waspada (3 sampai 6 Bulan)';
+    advice = 'Cukup untuk kebutuhan jangka pendek, namun dianjurkan segera membatasi pos gaya hidup non esensial jika sedang tanpa pemasukan tetap.';
+  } else if (runwayMonths >= 1) {
+    safetyTier = 'warning';
+    safetyLabel = 'Kritis (1 sampai 3 Bulan)';
+    advice = 'Ruang bertahan terbatas. Prioritaskan mencari penghasilan sementara atau pangkas pengeluaran sewa dan hiburan ke level bertahan hidup.';
+  } else {
+    safetyTier = 'danger';
+    safetyLabel = 'Zona Bahaya (Kurang dari 1 Bulan)';
+    advice = 'Tabungan Anda akan habis dalam hitungan pekan. Diperlukan tindakan darurat segera seperti mencari bantuan, kerja lepas cepat, atau menekan biaya hidup drastis.';
+  }
+
+  return {
+    savingsBalance: savings,
+    cityId: input.cityId,
+    monthlyExpenses: expenses,
+    expectedMonthlyIncome: income,
+    netBurnRate,
+    runwayMonths,
+    runwayDays,
+    safetyTier,
+    safetyLabel,
+    advice
+  };
+}
+
 

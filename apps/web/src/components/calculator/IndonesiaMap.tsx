@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Map, NavigationControl, Marker, setWorkerUrl } from 'maplibre-gl';
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import { City } from '@worthit/shared';
+import { City, formatRupiah } from '@worthit/shared';
 
 // Explicitly register worker URL so Vite serves it correctly
 setWorkerUrl(maplibreWorkerUrl);
@@ -23,6 +23,7 @@ export const IndonesiaMap: React.FC<RealMapProps> = ({
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapInstanceRef = useRef<Map | null>(null);
   const markersRef = useRef<{ [key: string]: Marker }>({});
+  const [mapMode, setMapMode] = useState<'pins' | 'heat'>('pins');
 
   useEffect(() => {
     if (!mapContainerRef.current) return;
@@ -47,6 +48,15 @@ export const IndonesiaMap: React.FC<RealMapProps> = ({
     };
   }, []);
 
+  // Helper to get heat color based on BPS cost relative to national average
+  const getCityHeatColor = (city: City) => {
+    const cost = city.benchmarks?.bpsMonthlyPerCapita || 2000000;
+    if (cost >= 2600000) return '#FF3B30'; // Red - Highest (Jakarta, Bekasi, etc)
+    if (cost >= 2100000) return '#FF9500'; // Orange - Above average (Surabaya, Tangerang)
+    if (cost >= 1800000) return '#007AFF'; // Blue - Moderate
+    return '#34C759'; // Green - Most affordable (Solo, Jogja, dll)
+  };
+
   // Sync city markers
   useEffect(() => {
     const map = mapInstanceRef.current;
@@ -60,13 +70,15 @@ export const IndonesiaMap: React.FC<RealMapProps> = ({
       if (!city.coordinates?.latitude || !city.coordinates?.longitude) return;
 
       const isSelected = city.id === selectedCityId;
+      const heatColor = getCityHeatColor(city);
+      const markerBg = mapMode === 'heat' ? heatColor : (isSelected ? '#007AFF' : '#1D1D1F');
 
       const el = document.createElement('div');
       el.className = 'cursor-pointer select-none';
       el.innerHTML = `
         <div style="position: relative; display: flex; flex-direction: column; align-items: center;">
           <div style="
-            background: ${isSelected ? '#007AFF' : '#1D1D1F'};
+            background: ${markerBg};
             color: #FFFFFF;
             font-size: 11px;
             font-weight: 600;
@@ -79,14 +91,14 @@ export const IndonesiaMap: React.FC<RealMapProps> = ({
             transform: scale(${isSelected ? 1.08 : 0.95});
             transition: all 0.2s ease;
           ">
-            ${city.name}
+            ${city.name}${mapMode === 'heat' && city.benchmarks?.bpsMonthlyPerCapita ? ` · ${formatRupiah(city.benchmarks.bpsMonthlyPerCapita)}` : ''}
           </div>
           <div style="
             width: ${isSelected ? '14px' : '10px'};
             height: ${isSelected ? '14px' : '10px'};
             border-radius: 50%;
-            background: ${isSelected ? '#007AFF' : '#FFFFFF'};
-            border: 2.5px solid ${isSelected ? '#FFFFFF' : '#007AFF'};
+            background: ${markerBg};
+            border: 2.5px solid #FFFFFF;
             box-shadow: 0 1px 4px rgba(0,0,0,0.3);
             transition: all 0.2s ease;
           "></div>
@@ -114,18 +126,47 @@ export const IndonesiaMap: React.FC<RealMapProps> = ({
         duration: 800
       });
     }
-  }, [cities, selectedCityId, onSelectCity]);
+  }, [cities, selectedCityId, onSelectCity, mapMode]);
 
   return (
     <div className="apple-card">
-      <div className="flex items-center justify-between mb-3">
-        <span className="text-xs font-semibold text-[var(--mu)] uppercase tracking-wider">
-          Peta Interaktif 30 Kota
-        </span>
-        <span className="text-xs font-semibold text-[var(--ac)]">
-          {cities.find((c) => c.id === selectedCityId)?.name || 'Pilih kota'} terpilih
-        </span>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
+        <div>
+          <span className="text-xs font-semibold text-[var(--mu)] uppercase tracking-wider block">
+            Peta Interaktif 30 Kota Indonesia
+          </span>
+          <span className="text-xs font-semibold text-[var(--ac)]">
+            {cities.find((c) => c.id === selectedCityId)?.name || 'Pilih kota'} terpilih
+          </span>
+        </div>
+
+        {/* Map Mode Toggle: Pin vs Heat Index */}
+        <div className="apple-seg !mb-0 text-xs shrink-0">
+          <button
+            type="button"
+            onClick={() => setMapMode('pins')}
+            className={mapMode === 'pins' ? 'on' : ''}
+          >
+            Pin Kota
+          </button>
+          <button
+            type="button"
+            onClick={() => setMapMode('heat')}
+            className={mapMode === 'heat' ? 'on' : ''}
+          >
+            🔥 Heat Indeks Biaya
+          </button>
+        </div>
       </div>
+
+      {mapMode === 'heat' && (
+        <div className="flex items-center gap-3 text-[11px] mb-2 px-1 text-[var(--mu)]">
+          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-[#34C759]"></span> Terjangkau</span>
+          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-[#007AFF]"></span> Menengah</span>
+          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-[#FF9500]"></span> Cukup Tinggi</span>
+          <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-[#FF3B30]"></span> Tertinggi</span>
+        </div>
+      )}
 
       <div
         ref={mapContainerRef}

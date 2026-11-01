@@ -5,9 +5,10 @@ import {
   calculateMinimumSalary,
   formatRupiah,
   calculateTaxAndDeductions,
-  estimateGrossFromNet,
   calculateReverseSalary,
-  calculateJobOfferComparison
+  calculateJobOfferComparison,
+  calculateEmergencyRunway,
+  adjustExpensesByLifestyle
 } from './calculations.js';
 
 test('Test 1: Normal income and expenses', () => {
@@ -93,8 +94,6 @@ test('Test 5: Format Rupiah helper', () => {
 
 test('Test 6: Tax & BPJS calculation under PTKP limit', () => {
   const calc = calculateTaxAndDeductions(5000000, 'TK/0');
-  // 5jt gross: BPJS Kes (1% = 50k), JHT (2% = 100k), JP (1% = 50k) = 200k BPJS
-  // Under 5.4jt for Category A has 0% PPh21 TER
   assert.equal(calc.pph21Monthly, 0);
   assert.equal(calc.totalBpjsEmployee, 200000);
   assert.equal(calc.takeHomePay, 4800000);
@@ -155,11 +154,42 @@ test('Test 8: Job Offer Comparison detects Phantom Raise', () => {
     }
   });
 
-  // Current disposable = 6,000,000 - 2,800,000 = 3,200,000
-  // Offer disposable = 8,500,000 - 6,600,000 = 1,900,000
-  // Difference = -1,300,000 (Phantom raise)
   assert.equal(offer.salaryIncreaseAmount, 2500000);
   assert.equal(offer.disposableIncomeDifference, -1300000);
   assert.equal(offer.isWorthIt, false);
   assert.ok(offer.recommendationHeadline.includes('Kurang Menguntungkan'));
+});
+
+test('Test 9: Emergency Runway Calculator accurately computes runway months', () => {
+  const runway = calculateEmergencyRunway({
+    savingsBalance: 30000000,
+    cityId: 'surabaya',
+    monthlyExpenses: 5000000,
+    expectedMonthlyIncome: 0
+  });
+
+  assert.equal(runway.netBurnRate, 5000000);
+  assert.equal(runway.runwayMonths, 6);
+  assert.equal(runway.safetyTier, 'safe');
+});
+
+test('Test 10: Adjust Expenses by Lifestyle tier adjusts ratios properly', () => {
+  const base = {
+    housing: 1000000,
+    food: 1000000,
+    transportation: 300000,
+    utilities: 200000,
+    lifestyle: 300000,
+    financialObligations: 500000,
+    other: 100000
+  };
+
+  const frugal = adjustExpensesByLifestyle(base, 'frugal');
+  assert.ok(frugal.housing < base.housing);
+  assert.ok(frugal.lifestyle < base.lifestyle);
+  assert.equal(frugal.financialObligations, base.financialObligations);
+
+  const comfortable = adjustExpensesByLifestyle(base, 'comfortable');
+  assert.ok(comfortable.housing > base.housing);
+  assert.ok(comfortable.food > base.food);
 });

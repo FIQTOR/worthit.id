@@ -26,6 +26,9 @@ export function Footer() {
             <Link to="/calculator" className="block py-0.5 hover:text-[var(--ac)] transition-colors">
               Kalkulator Biaya
             </Link>
+            <Link to="/runway" className="block py-0.5 hover:text-[var(--ac)] transition-colors">
+              Runway Dana Darurat
+            </Link>
             <Link to="/reverse-calculator" className="block py-0.5 hover:text-[var(--ac)] transition-colors">
               Target Gaji (Reverse)
             </Link>
