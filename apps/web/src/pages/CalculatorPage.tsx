@@ -177,7 +177,7 @@ export function CalculatorPage() {
 
               {/* Mode Toggle: Gaji Bersih vs Kotor */}
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-semibold text-neutral-600">Jenis Input:</span>
+                <span className="text-xs font-semibold text-[var(--mu)]">Jenis Input:</span>
                 <div className="apple-seg !mb-0 text-xs">
                   <button
                     type="button"

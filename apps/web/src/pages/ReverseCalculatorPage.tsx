@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import {
   formatRupiah,
   calculateReverseSalary,
@@ -93,8 +94,17 @@ export function ReverseCalculatorPage() {
   const totalExpenseVal = calculateTotalExpenses(expenses);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      {/* Header */}
+    <>
+      <Helmet>
+        <title>Target Gaji & Negosiasi Offer – WorthIt Indonesia</title>
+        <meta
+          name="description"
+          content="Hitung target penawaran gaji kotor (gross) dan take home pay bersih berdasarkan target tabungan dan biaya hidup kota tujuan."
+        />
+      </Helmet>
+
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        {/* Header */}
       <div className="text-center max-w-2xl mx-auto mb-10">
         <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[var(--ac)] bg-[var(--f)] px-3 py-1 rounded-full mb-3">
           Kalkulator Target Gaji (Reverse)
@@ -400,12 +410,13 @@ export function ReverseCalculatorPage() {
           </div>
 
           {/* Quick Guidance Box */}
-          <div className="p-4 bg-blue-50/60 border border-blue-200/60 rounded-xl text-xs text-neutral-700 leading-relaxed">
-            <strong className="text-blue-900 block mb-1">Tips Negosiasi Gaji:</strong>
+          <div className="p-4 bg-[var(--f)] border border-[var(--bd)] rounded-2xl text-xs text-[var(--tx)] leading-relaxed">
+            <strong className="text-[var(--ac)] block mb-1">Tips Negosiasi Gaji:</strong>
             Sebutkan angka gross saat wawancara jika perusahaan menerapkan sistem pemotongan PPh 21 & BPJS standar. Minta penegasan apakah angka tawaran berupa <em>Gross</em> atau <em>Nett</em> di offering letter.
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 }

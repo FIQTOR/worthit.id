@@ -117,31 +117,31 @@ export const IndonesiaMap: React.FC<RealMapProps> = ({
   }, [cities, selectedCityId, onSelectCity]);
 
   return (
-    <div className="w-full bg-surface rounded-2xl p-4 border border-border relative overflow-hidden shadow-sm">
+    <div className="apple-card">
       <div className="flex items-center justify-between mb-3">
-        <span className="text-xs font-semibold text-text-secondary uppercase tracking-wider">
-          Pilih Kota di Peta Interaktif
+        <span className="text-xs font-semibold text-[var(--mu)] uppercase tracking-wider">
+          Peta Interaktif 30 Kota
         </span>
-        <span className="text-xs font-semibold text-accent">
+        <span className="text-xs font-semibold text-[var(--ac)]">
           {cities.find((c) => c.id === selectedCityId)?.name || 'Pilih kota'} terpilih
         </span>
       </div>
 
       <div
         ref={mapContainerRef}
-        className="w-full h-[340px] rounded-xl overflow-hidden border border-border relative z-0"
+        className="w-full h-[320px] rounded-xl overflow-hidden border border-[var(--bd)] relative z-0"
       />
 
-      <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-border/60">
+      <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-[var(--bd)] max-h-28 overflow-y-auto">
         {cities.map((city) => (
           <button
             key={city.id}
             type="button"
             onClick={() => onSelectCity(city.id)}
-            className={`px-3 py-1.5 rounded-full text-xs font-medium transition-smooth ${
+            className={`px-3 py-1.5 rounded-full text-xs font-medium transition ${
               city.id === selectedCityId
-                ? 'bg-accent text-white shadow-sm ring-2 ring-accent/30'
-                : 'bg-surface text-text-primary border border-border hover:bg-gray-50'
+                ? 'bg-[var(--ac)] text-white shadow-sm'
+                : 'bg-[var(--f)] text-[var(--tx)] border border-[var(--bd)] hover:opacity-80'
             }`}
           >
             {city.name}

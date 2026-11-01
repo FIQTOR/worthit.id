@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import {
   formatRupiah,
   calculateJobOfferComparison,
@@ -90,8 +91,17 @@ export function JobOfferPage() {
   }, [currentCityId, currentNetSalary, currentExpenses, offerCityId, offerNetSalary, offerExpenses]);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      {/* Header */}
+    <>
+      <Helmet>
+        <title>Simulator Tawaran Kerja (Job Offer) – WorthIt Indonesia</title>
+        <meta
+          name="description"
+          content="Bandingkan penawaran gaji baru dan lonjakan biaya hidup di kota tujuan untuk mendeteksi phantom raise sebelum menerima offer kerja."
+        />
+      </Helmet>
+
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        {/* Header */}
       <div className="text-center max-w-2xl mx-auto mb-10">
         <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[var(--ok)] bg-[var(--f)] px-3 py-1 rounded-full mb-3">
           Simulator Tawaran Kerja (Job Offer)
@@ -347,5 +357,6 @@ export function JobOfferPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
